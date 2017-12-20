@@ -4,7 +4,9 @@
   "description": "A rebuilt version of lolfy",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "build": "webpack",
+    "server": "http-server ./src/client/dist",
+    "start": "yarn build -s && yarn server -s"
   },
   "repository": {
     "type": "git",
