@@ -1,0 +1,45 @@
+{
+  "name": "lolfyv2",
+  "version": "1.0.0",
+  "description": "A rebuilt version of lolfy",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzmarkzz321/LoLFYv2.git"
+  },
+  "keywords": [
+    "leagueoflegends",
+    "riotgames",
+    "nodejs",
+    "reactjs",
+    "expressjs",
+    "es6"
+  ],
+  "author": "Mark Renzo Santiago",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zzmarkzz321/LoLFYv2/issues"
+  },
+  "homepage": "https://github.com/zzmarkzz321/LoLFYv2#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "del-cli": "^1.1.0",
+    "html-webpack-plugin": "^2.30.1",
+    "http-server": "^0.10.0",
+    "path": "^0.12.7",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
