@@ -4,6 +4,7 @@
   "description": "A rebuilt version of lolfy",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server",
     "build": "webpack",
     "server": "http-server ./src/client/dist",
     "start": "yarn build -s && yarn server -s"
@@ -41,7 +42,10 @@
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
+    "babel-plugin-emotion": "^8.0.12",
+    "emotion": "^8.0.12",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-emotion": "^8.0.12"
   }
 }
