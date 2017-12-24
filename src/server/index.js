@@ -96,12 +96,8 @@ const _getChamponImage = (championID) => {
 const _getMatchInfo = (matchID) => {
     let url = '/lol/match/v3/matches/' + matchID + '?api_key=';
     return Axios.get(baseURI + url + RIOT_API_KEY)
-        .then((response) => {
-            return response.data
-        })
-        .catch((err) => {
-            return ({err});
-        });
+        .then((response) => response.data)
+        .catch((err) => err);
 };
 
 /**
@@ -111,13 +107,8 @@ const _getMatchInfo = (matchID) => {
 const _getRecentMatches = (summonerID) => {
     let url = '/lol/match/v3/matchlists/by-account/' + summonerID + '/recent?api_key=';
     return Axios.get(baseURI + url + RIOT_API_KEY)
-            .then((response) => {
-                console.log(response.data.matches);
-                return response.data.matches;
-            })
-            .catch((err) => {
-                return err;
-            })
+            .then((response) => response.data.matches)
+            .catch((err) => err)
 };
 
 /**
@@ -127,39 +118,14 @@ const _getRecentMatches = (summonerID) => {
 const _getSummonerId = (summonerName) => {
     let url = '/lol/summoner/v3/summoners/by-name/' + summonerName + '?api_key=';
     return Axios.get(baseURI + url + RIOT_API_KEY)
-            .then((response) => {
-                return response.data.accountId;
-            })
-            .catch((err) => {
-                return (err);
-            })
+            .then((response) => response.data.accountId)
+            .catch((err) => err);
 };
-
-// console.log(_formatMatchData(matchInfo, 1, "Mark and Sweep"));
-
-const _testEverything = () => {
-    const summonerName = "Mark and Sweep";
-    const getSummonerIdPromise = _getSummonerId(summonerName);
-
-    return getSummonerIdPromise
-        .then(summonerID => _getRecentMatches(summonerID))
-        .then(recentMatches => recentMatches.map((x) => x.gameId))
-        .then(allRecentMatchesID => _getMatchInfo(allRecentMatchesID[0]))
-        .then(matchDetails => {
-            const participantIdentity = matchDetails.participantIdentities.filter(x => x.player.summonerName === summonerName);
-            return _formatMatchData(matchDetails, participantIdentity[0].participantId, summonerName);
-        })
-        .then(formattedMatchData => console.log(JSON.stringify(formattedMatchData, null, 2)))
-        .catch(err => console.log(err));
-};
-
-// _testEverything();
 
 /**
- * Sends a summoner info from google function
- * TODO rename this to getMatchInfo
+ * Sends a summoner's match info from a google function
  */
-exports.getSummonerInfo = (req, res) => {
+exports.getSummonerMatchInfo = (req, res) => {
     const summonerName = req.summonerName;
     const getSummonerIdPromise = _getSummonerId(summonerName);
 
@@ -172,5 +138,5 @@ exports.getSummonerInfo = (req, res) => {
             return _formatMatchData(matchDetails, participantIdentity[0].participantId, summonerName);
         })
         .then(formattedMatchData => res.send("matchInfo" + JSON.stringify(formattedMatchData, null, 2)))
-        .catch(err => console.log(err));
+        .catch(err => res.send({"error": "Please renew the RIOT API Key"}));
 };
