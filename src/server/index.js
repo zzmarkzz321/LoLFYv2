@@ -171,6 +171,6 @@ exports.getSummonerInfo = (req, res) => {
             const participantIdentity = matchDetails.participantIdentities.filter(x => x.player.summonerName === summonerName);
             return _formatMatchData(matchDetails, participantIdentity[0].participantId, summonerName);
         })
-        .then(formattedMatchData => res.send("Summoner ID Info: " + JSON.stringify(formattedMatchData, null, 2)))
+        .then(formattedMatchData => res.send("matchInfo" + JSON.stringify(formattedMatchData, null, 2)))
         .catch(err => console.log(err));
 };
