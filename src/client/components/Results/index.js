@@ -109,21 +109,21 @@ const RecentMatchesList = (props) => (
             <RecentMatch>
                 <ChampionAvatar/>
                 <div>
-                    <h2>Victory</h2>
+                    <Outcome victory={true}>Victory</Outcome>
                     <h3>23:33</h3>
                 </div>
             </RecentMatch>
             <RecentMatch>
                 <ChampionAvatar/>
                 <div>
-                    <h2>Victory</h2>
+                    <Outcome victory={true}>Victory</Outcome>
                     <h3>23:33</h3>
                 </div>
             </RecentMatch>
             <RecentMatch>
                 <ChampionAvatar/>
                 <div>
-                    <h2>Victory</h2>
+                    <Outcome victory={true}>Victory</Outcome>
                     <h3>23:33</h3>
                 </div>
             </RecentMatch>
