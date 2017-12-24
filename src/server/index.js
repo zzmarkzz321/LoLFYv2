@@ -153,16 +153,7 @@ const _testEverything = () => {
         .catch(err => console.log(err));
 };
 
-_testEverything();
-
-
-
-
-
-
-
-
-
+// _testEverything();
 
 /**
  * Sends a summoner info from google function
@@ -170,29 +161,16 @@ _testEverything();
  */
 exports.getSummonerInfo = (req, res) => {
     const summonerName = req.summonerName;
+    const getSummonerIdPromise = _getSummonerId(summonerName);
 
-    // return new Promise((resolve, reject) => {
-    //     _getSummonerId(summonerName)
-    //         .then((summonerID) => {
-    //             return _getRecentMatches(summonerID);
-    //         })
-    //         .then((recentMatches) => {
-    //             let recentMatchesID = [];
-    //
-    //             recentMatches.matches.forEach((match) => {
-    //                 recentMatchesID.push(match.gameId);
-    //             });
-    //             return recentMatchesID;
-    //         })
-    //         .then((recentMatchesID) => {
-    //             resolve({'recentMatchID': recentMatchesID});
-    //             const matchDetails = _getMatchInfo(recentMatchesID[0]);
-    //
-    //             res.send("Summoner ID Info: " + JSON.stringify(summonerID, null, 2));
-    //         })
-    //         .catch(() => {
-    //             reject({'err': 'does not work'});
-    //         });
-    // });
-
+    return getSummonerIdPromise
+        .then(summonerID => _getRecentMatches(summonerID))
+        .then(recentMatches => recentMatches.map((x) => x.gameId))
+        .then(allRecentMatchesID => _getMatchInfo(allRecentMatchesID[0]))
+        .then(matchDetails => {
+            const participantIdentity = matchDetails.participantIdentities.filter(x => x.player.summonerName === summonerName);
+            return _formatMatchData(matchDetails, participantIdentity[0].participantId, summonerName);
+        })
+        .then(formattedMatchData => res.send("Summoner ID Info: " + JSON.stringify(formattedMatchData, null, 2)))
+        .catch(err => console.log(err));
 };
