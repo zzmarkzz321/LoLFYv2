@@ -1,7 +1,10 @@
+'use strict';
+
 const Axios = require('axios');
 const baseURI = 'https://na1.api.riotgames.com';
 require('dotenv').config();
 const RIOT_API_KEY = process.env.RIOT_API;
+
 
 /**
  * Formats all the data from the RIOT APIs and returns a json with the required info
@@ -120,17 +123,18 @@ const _getSummonerId = (summonerName) => {
  * Sends a summoner's match info from a google function
  */
 exports.getSummonerMatchInfo = (req, res) => {
-    const summonerName = req.body.summonerName;
+    const summonerName = req.body.summonerName || req.get('summonerName');
     const getSummonerIdPromise = _getSummonerId(summonerName);
 
     return getSummonerIdPromise
         .then(summonerID => _getRecentMatches(summonerID))
-        .then(recentMatches => recentMatches.map((x) => x.gameId))
+        .then(recentMatches => recentMatches.map(x => x.gameId))
         .then(allRecentMatchesID => _getMatchInfo(allRecentMatchesID[0]))
         .then(matchDetails => {
-            const participantIdentity = matchDetails.participantIdentities.filter(x => x.player.summonerName.toLowerCase() === summonerName.toLowerCase());
+            const participantIdentity = matchDetails.participantIdentities
+                .filter(x => x.player.summonerName.toLowerCase() === summonerName.toLowerCase());
             return _formatMatchData(matchDetails, participantIdentity[0].participantId, summonerName);
         })
         .then(formattedMatchData => res.send("matchInfo" + JSON.stringify(formattedMatchData, null, 2)))
-        .catch(err => res.send({"error": "Please renew the RIOT API Key"}));
+        .catch(err => res.send({"error": "Please renew the RIOT API Key " + summonerName}));
 };

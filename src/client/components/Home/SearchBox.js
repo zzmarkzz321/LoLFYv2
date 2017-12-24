@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const SearchBox = (props) => (
-    <form>
+    <form action="/#/results">
         <div className='ui big icon input'>
             <input type='text' placeholder='Search...'/>
             <button type='submit'>

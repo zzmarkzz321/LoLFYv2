@@ -1,28 +1,5 @@
 import React, { Component } from 'react';
 import styled from "react-emotion";
-// import logo from '../../assets/emotion.png';
-/*
-* current match history info
-*   outcome
-*   game length
-*   summoner name
-*   champoion played
-*   KDA
-*   items bought
-*   level
-*   total creep score
-*   creep score per minute (total creep score / game length)
-*
-* Other match history (list)
-*   champion played
-*   outcome
-* */
-
-/*
-* TODO set up the URL-LOADER in webpack to handle images
-* TODO
-*
-* */
 
 const ChampionAvatar = styled('img')`
     width: 86px;
@@ -132,6 +109,19 @@ const RecentMatchesList = (props) => (
 );
 
 export class Results extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: 'Hello'};
+    }
+
+    componentWillMount() {
+        console.log("Hello");
+    }
+
+    componentDidMount() {
+        console.log(this.state.value);
+    }
+
     render() {
         return (
             <section>
