@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { css, injectGlobal } from "react-emotion";
 import { SearchBox } from './';
+import { Results } from "../Results/index";
+import Axios from 'axios';
 
 const app = css`
     text-align: center;
@@ -31,12 +33,74 @@ injectGlobal`
     }
 `;
 
-export const Home = () => (
-    <div className={app}>
-        <div className={appHeader}>
-            <h1>LOL<span>FY</span></h1>
-            <p>Mini LoL Stat Application. Powered by React and NodeJS.</p>
-        </div>
-        <SearchBox />
-    </div>
-);
+export class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            "search": false,
+            "outcome": "",
+            "gameLength": 0,
+            "summonerName": "",
+            "summonerSpells": [],
+            "champion": 0,
+            "kda": "",
+            "items": [],
+            "championLevel": 0,
+            "creepScore": 0,
+            "creepScorePerMinute": 0
+        };
+    }
+
+     _handleChange = (event) => {
+        this.setState({summonerName: event.target.value});
+    };
+
+    // Handle the API call to the server
+    _handleSubmit = (event) => {
+        Axios.request({
+            baseURL: 'https://us-central1-inspired-gift-162107.cloudfunctions.net/getSummonerMatchInfo',
+            method: "POST",
+            data: {
+                summonerName: this.state.summonerName
+            }
+        }).then((res) => {
+            const matchInfo = res.data;
+            this.setState({
+                "search": true,
+                "outcome": matchInfo.outcome,
+                "gameLength": matchInfo.gameLength,
+                "summonerName": matchInfo.summonerName,
+                "summonerSpells": matchInfo.summonerSpells,
+                "champion": matchInfo.champion,
+                "kda": matchInfo.kda,
+                "items": matchInfo.items,
+                "championLevel": matchInfo.championLevel,
+                "creepScore": matchInfo.creepScore,
+                "creepScorePerMinute": matchInfo.creepScorePerMinute
+            })
+
+        }).catch(err => {
+            console.log(err);
+        });
+
+        event.preventDefault();
+    };
+
+    render() {
+        if (!this.state.search) {
+            return (
+                <div className={app}>
+                    <div className={appHeader}>
+                        <h1>LOL<span>FY</span></h1>
+                        <p>Mini LoL Stat Application. Powered by... a lot of things.</p>
+                    </div>
+                    <SearchBox _handleChange={this._handleChange} _handleSubmit={this._handleSubmit}/>
+                </div>
+            )
+        }
+
+        return (
+            <Results matchInfo={this.state}/>
+        )
+    }
+}
