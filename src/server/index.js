@@ -17,16 +17,13 @@ const _formatMatchData = (matchDetails, participantID, summonerName) => {
     const outcome = participantStats.win ? "Victory" : "Defeat";
     const gameLength = matchDetails.gameDuration;
 
-    // TODO translate the summoner spell ID to an image
     const summonerSpells = [
         participantBase.spell1Id,
         participantBase.spell2Id
     ];
 
-    // TODO translate this to champion image
     const champion = participantBase.championId;
 
-    // TODO translate to item images
     const items = [
         participantStats.item0,
         participantStats.item1,
