@@ -123,6 +123,11 @@ const _getSummonerId = (summonerName) => {
  * Sends a summoner's match info from a google function
  */
 exports.getSummonerMatchInfo = (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*')
+        .set('Access-Control-Allow-Headers', '*')
+        .set('Access-Control-Allow-Methods', 'GET, POST')
+        .status(200);
+
     const summonerName = req.body.summonerName || req.get('summonerName');
     const getSummonerIdPromise = _getSummonerId(summonerName);
 
@@ -136,5 +141,5 @@ exports.getSummonerMatchInfo = (req, res) => {
             return _formatMatchData(matchDetails, participantIdentity[0].participantId, summonerName);
         })
         .then(formattedMatchData => res.send("matchInfo" + JSON.stringify(formattedMatchData, null, 2)))
-        .catch(err => res.send({"error": "Please renew the RIOT API Key " + summonerName}));
+        .catch(err => res.send({"error": "Please renew the RIOT API Key"}));
 };

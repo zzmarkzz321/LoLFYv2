@@ -9,6 +9,7 @@ export const App = () => (
     <HashRouter>
         <Switch>
             <Route path="/" exact component={Home}/>
+            {/*Remove in production*/}
             <Route name="results" path="/results" component={Results}/>
             <Route component={NotFound}/>
         </Switch>
