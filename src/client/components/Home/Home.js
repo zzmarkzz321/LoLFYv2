@@ -64,7 +64,21 @@ export class Home extends Component {
                 summonerName: this.state.summonerName
             }
         }).then((res) => {
-            console.log(res);
+            const matchInfo = res.data;
+            this.setState({
+                "search": true,
+                "outcome": matchInfo.outcome,
+                "gameLength": matchInfo.gameLength,
+                "summonerName": matchInfo.summonerName,
+                "summonerSpells": matchInfo.summonerSpells,
+                "champion": matchInfo.champion,
+                "kda": matchInfo.kda,
+                "items": matchInfo.items,
+                "championLevel": matchInfo.championLevel,
+                "creepScore": matchInfo.creepScore,
+                "creepScorePerMinute": matchInfo.creepScorePerMinute
+            })
+
         }).catch(err => {
             console.log(err);
         });
@@ -86,7 +100,7 @@ export class Home extends Component {
         }
 
         return (
-            <Results/>
+            <Results matchInfo={this.state}/>
         )
     }
 }
