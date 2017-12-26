@@ -44,7 +44,7 @@ const _formatMatchData = (matchDetails, participantID, summonerName) => {
 
     const championLevel = participantStats.champLevel;
     const creepScore = participantStats.totalMinionsKilled;
-    const creepScorePerMinute = gameLength/creepScore;
+    const creepScorePerMinute = Math.round(gameLength/creepScore);
 
     let matchDetailsSchema = {
         outcome,
@@ -63,38 +63,14 @@ const _formatMatchData = (matchDetails, participantID, summonerName) => {
 };
 
 /**
- * Grabs the summoner spell Image
- *
- */
-const _getSummonerSpellImage = (spellID) => {
-
-};
-
-/**
- * Grabs the item Image
- *
- */
-const _getItemImage = (itemID) => {
-
-};
-
-/**
- * Grabs the champion image
- * @private
- */
-const _getChamponImage = (championID) => {
-
-};
-
-/**
  * Grabs the match info given a matchID
  * @param matchID
  */
 const _getMatchInfo = (matchID) => {
     let url = '/lol/match/v3/matches/' + matchID + '?api_key=';
     return Axios.get(baseURI + url + RIOT_API_KEY)
-        .then((response) => response.data)
-        .catch((err) => err);
+        .then(response => response.data)
+        .catch(err => err);
 };
 
 /**
@@ -104,8 +80,8 @@ const _getMatchInfo = (matchID) => {
 const _getRecentMatches = (summonerID) => {
     let url = '/lol/match/v3/matchlists/by-account/' + summonerID + '/recent?api_key=';
     return Axios.get(baseURI + url + RIOT_API_KEY)
-            .then((response) => response.data.matches)
-            .catch((err) => err)
+            .then(response => response.data.matches)
+            .catch(err => err)
 };
 
 /**
@@ -115,8 +91,8 @@ const _getRecentMatches = (summonerID) => {
 const _getSummonerId = (summonerName) => {
     let url = '/lol/summoner/v3/summoners/by-name/' + summonerName + '?api_key=';
     return Axios.get(baseURI + url + RIOT_API_KEY)
-            .then((response) => response.data.accountId)
-            .catch((err) => err);
+            .then(response => response.data.accountId)
+            .catch(err => err);
 };
 
 /**
@@ -140,6 +116,6 @@ exports.getSummonerMatchInfo = (req, res) => {
                 .filter(x => x.player.summonerName.toLowerCase() === summonerName.toLowerCase());
             return _formatMatchData(matchDetails, participantIdentity[0].participantId, summonerName);
         })
-        .then(formattedMatchData => res.send("matchInfo" + JSON.stringify(formattedMatchData, null, 2)))
+        .then(formattedMatchData => res.send(JSON.stringify(formattedMatchData, null, 2)))
         .catch(err => res.send({"error": "Please renew the RIOT API Key"}));
 };
