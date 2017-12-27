@@ -82,7 +82,7 @@ export class Results extends Component {
             return (
                 <MatchContainer>
 
-                    <h1>RECENT GAME: {Math.ceil(matchInfo.gameLength/60)} min</h1>
+                    <h1>RECENT GAME: {matchInfo.gameLength} min</h1>
 
                     <Outcome victory={matchInfo.outcome === 'Victory'}>{matchInfo.outcome}</Outcome>
 
