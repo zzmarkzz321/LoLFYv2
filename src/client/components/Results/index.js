@@ -78,6 +78,7 @@ export class Results extends Component {
 
     render() {
         const matchInfo = this.props.matchInfo;
+
         const gameLengthSeconds = matchInfo.gameLength % 1;
         const gameLengthSecondsConverted = Math.trunc(gameLengthSeconds * 60);
         const gameLengthMinute = Math.trunc(matchInfo.gameLength);
@@ -103,7 +104,7 @@ export class Results extends Component {
                     <ItemTable>
                         <tbody>
                             <tr>
-                                <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[0], '.png') || ""}/></td>
+                                <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[0], '.png')}/></td>
                                 <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[1], '.png')}/></td>
                                 <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[2], '.png')}/></td>
                             </tr>

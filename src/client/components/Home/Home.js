@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { css, injectGlobal } from "react-emotion";
 import { SearchBox } from './';
 import { Results } from "../Results/index";
+import { OverlayLoader } from './OverlayLoader';
 import Axios from 'axios';
 
 const app = css`
@@ -57,6 +58,7 @@ export class Home extends Component {
 
     // Handle the API call to the server
     _handleSubmit = (event) => {
+        document.getElementById('loader-1').style.display = "block";
         Axios.request({
             baseURL: 'https://us-central1-inspired-gift-162107.cloudfunctions.net/getSummonerMatchInfo',
             method: "POST",
@@ -95,6 +97,7 @@ export class Home extends Component {
                         <p>Mini LoL Stat Application. Powered by... a lot of things.</p>
                     </div>
                     <SearchBox _handleChange={this._handleChange} _handleSubmit={this._handleSubmit}/>
+                    <OverlayLoader/>
                 </div>
             )
         }

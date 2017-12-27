@@ -1663,4 +1663,4 @@ module.exports.matchInfo = {
 ],
     "gameDuration": 1675,
     "gameCreation": 1514102232876
-}
+};
