@@ -40,6 +40,18 @@ const Outcome = styled('h2')`
     color: ${props => props.victory ? 'green' : 'red'}
 `;
 
+const Navigation = styled('nav')`
+    margin: 5% 10%;
+    display: block;
+`;
+
+const HomeButton = styled('a')`
+    font-size: 35px;
+    color: #fff;
+    & span {
+    color: #f00;
+    }
+`;
 
 const MatchListContainer = styled('section')`
     display: block;
@@ -85,24 +97,28 @@ export class Results extends Component {
 
         if (matchInfo.championLevel !== undefined)
             return (
-                <MatchContainer>
+                <div>
+                    <Navigation>
+                        <HomeButton href="/#">LOL<span>FY</span></HomeButton>
+                    </Navigation>
+                    <MatchContainer>
 
-                    <h1>RECENT GAME: {gameLengthMinute}m {gameLengthSecondsConverted}s</h1>
+                        <h1>RECENT GAME: {gameLengthMinute}m {gameLengthSecondsConverted}s</h1>
 
-                    <Outcome victory={matchInfo.outcome === 'Victory'}>{matchInfo.outcome}</Outcome>
+                        <Outcome victory={matchInfo.outcome === 'Victory'}>{matchInfo.outcome}</Outcome>
 
-                    <ChampionAvatar src={championSpriteCdn.concat(championIdMap[matchInfo.champion], '.png')}/>
+                        <ChampionAvatar src={championSpriteCdn.concat(championIdMap[matchInfo.champion], '.png')}/>
 
-                    <h2>{championIdMap[matchInfo.champion]}</h2>
-                    <h2>{matchInfo.summonerName}</h2>
-                    <h3>Level {matchInfo.championLevel}</h3>
+                        <h2>{championIdMap[matchInfo.champion]}</h2>
+                        <h2>{matchInfo.summonerName}</h2>
+                        <h3>Level {matchInfo.championLevel}</h3>
 
-                    <p>{matchInfo.kda} KDA</p>
-                    <p>{matchInfo.creepScore} CS</p>
-                    <p>{matchInfo.creepScorePerMinute} CS/Min</p>
+                        <p>{matchInfo.kda} KDA</p>
+                        <p>{matchInfo.creepScore} CS</p>
+                        <p>{matchInfo.creepScorePerMinute} CS/Min</p>
 
-                    <ItemTable>
-                        <tbody>
+                        <ItemTable>
+                            <tbody>
                             <tr>
                                 <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[0], '.png')}/></td>
                                 <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[1], '.png')}/></td>
@@ -116,9 +132,10 @@ export class Results extends Component {
                             <tr>
                                 <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[6], '.png')}/></td>
                             </tr>
-                        </tbody>
-                    </ItemTable>
-                </MatchContainer>
+                            </tbody>
+                        </ItemTable>
+                    </MatchContainer>
+                </div>
             );
 
         return (
