@@ -4475,33 +4475,33 @@ var itemSpriteCdn = 'http://ddragon.leagueoflegends.com/cdn/7.5.2/img/item/';
 (0, _reactEmotion.injectGlobal)('body{margin:0;padding:0;font-family:sans-serif;background-color:#222;color:white;}');
 
 var ChampionAvatar = /*#__PURE__*/(0, _reactEmotion2.default)('img', {
-    target: 'css-13j1c140'
+    target: 'css-1muycv10'
 })('width:86px;height:86px;border-radius:50%;');
 
 var ItemAvatar = /*#__PURE__*/(0, _reactEmotion2.default)('img', {
-    target: 'css-13j1c141'
+    target: 'css-1muycv11'
 })('width:46px;height:46px;border-radius:50%;');
 
 var ItemTable = /*#__PURE__*/(0, _reactEmotion2.default)('table', {
-    target: 'css-13j1c142'
+    target: 'css-1muycv12'
 })('margin:0 auto;');
 
 var MatchContainer = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-    target: 'css-13j1c143'
+    target: 'css-1muycv13'
 })('margin:5% 0%;text-align:center;');
 
 var Outcome = /*#__PURE__*/(0, _reactEmotion2.default)('h2', {
-    target: 'css-13j1c144'
+    target: 'css-1muycv14'
 })('color:', function (props) {
     return props.victory ? 'green' : 'red';
 });
 
 var MatchListContainer = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-    target: 'css-13j1c145'
+    target: 'css-1muycv15'
 })('display:block;margin:auto;text-align:center;');
 
 var RecentMatch = /*#__PURE__*/(0, _reactEmotion2.default)('li', {
-    target: 'css-13j1c146'
+    target: 'css-1muycv16'
 })('display:flex;justify-content:space-evenly;list-style:none;');
 
 var RecentMatchesList = function RecentMatchesList(props) {
@@ -4557,6 +4557,10 @@ var Results = exports.Results = function (_Component) {
         key: 'render',
         value: function render() {
             var matchInfo = this.props.matchInfo;
+            var gameLengthSeconds = matchInfo.gameLength % 1;
+            var gameLengthSecondsConverted = Math.trunc(gameLengthSeconds * 60);
+            var gameLengthMinute = Math.trunc(matchInfo.gameLength);
+
             if (matchInfo.championLevel !== undefined) return _react2.default.createElement(
                 MatchContainer,
                 null,
@@ -4564,8 +4568,10 @@ var Results = exports.Results = function (_Component) {
                     'h1',
                     null,
                     'RECENT GAME: ',
-                    matchInfo.gameLength,
-                    ' min'
+                    gameLengthMinute,
+                    'm ',
+                    gameLengthSecondsConverted,
+                    's'
                 ),
                 _react2.default.createElement(
                     Outcome,
@@ -4619,7 +4625,7 @@ var Results = exports.Results = function (_Component) {
                             _react2.default.createElement(
                                 'td',
                                 null,
-                                _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[0], '.png') })
+                                _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[0], '.png') || "" })
                             ),
                             _react2.default.createElement(
                                 'td',

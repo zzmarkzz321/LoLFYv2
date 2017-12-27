@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a863cb1-af19-4f68-90b9-b47dc5e5a4da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/components/Results/index.js" afterPath="$PROJECT_DIR$/src/client/components/Results/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/index.js" afterPath="$PROJECT_DIR$/src/server/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/mockData/matchInfo.js" afterPath="$PROJECT_DIR$/src/server/mockData/matchInfo.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,31 +40,32 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/components/Results/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="86" column="33" lean-forward="false" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
+            <state relative-caret-position="290">
+              <caret line="116" column="33" lean-forward="true" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="-7">
+              <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="matchInfo.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="matchInfo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/mockData/matchInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="1403" column="33" lean-forward="false" selection-start-line="1403" selection-start-column="13" selection-end-line="1403" selection-end-column="33" />
+            <state relative-caret-position="180">
+              <caret line="1663" column="24" lean-forward="false" selection-start-line="1663" selection-start-column="20" selection-end-line="1663" selection-end-column="24" />
               <folding>
                 <element signature="e#123#4158#0" expanded="false" />
                 <element signature="e#4310#6176#0" expanded="false" />
+                <element signature="e#6198#52002#0" expanded="false" />
                 <element signature="e#6204#10733#0" expanded="false" />
                 <element signature="e#15317#19912#0" expanded="false" />
                 <element signature="e#19918#24476#0" expanded="false" />
@@ -74,7 +73,6 @@
                 <element signature="e#29056#33690#0" expanded="false" />
                 <element signature="e#33696#38278#0" expanded="false" />
                 <element signature="e#38288#42847#0" expanded="false" />
-                <element signature="e#47417#52000#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -185,8 +183,8 @@
         <option value="$PROJECT_DIR$/src/client/assets/championInfo.js" />
         <option value="$PROJECT_DIR$/src/client/common.js" />
         <option value="$PROJECT_DIR$/src/server/mockData/matchInfo.js" />
-        <option value="$PROJECT_DIR$/src/client/components/Results/index.js" />
         <option value="$PROJECT_DIR$/src/server/index.js" />
+        <option value="$PROJECT_DIR$/src/client/components/Results/index.js" />
       </list>
     </option>
   </component>
@@ -335,12 +333,12 @@
       <workItem from="1513995676313" duration="9044000" />
       <workItem from="1514059795134" duration="20452000" />
       <workItem from="1514319639043" duration="5001000" />
-      <workItem from="1514394999569" duration="945000" />
+      <workItem from="1514394999569" duration="3498000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65200000" />
+    <option name="totallyTimeSpent" value="67753000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -745,13 +743,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/components/Results/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="116" column="33" lean-forward="true" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/mockData/matchInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="1403" column="33" lean-forward="false" selection-start-line="1403" selection-start-column="13" selection-end-line="1403" selection-end-column="33" />
+        <state relative-caret-position="180">
+          <caret line="1663" column="24" lean-forward="false" selection-start-line="1663" selection-start-column="20" selection-end-line="1663" selection-end-column="24" />
           <folding>
             <element signature="e#123#4158#0" expanded="false" />
             <element signature="e#4310#6176#0" expanded="false" />
+            <element signature="e#6198#52002#0" expanded="false" />
             <element signature="e#6204#10733#0" expanded="false" />
             <element signature="e#15317#19912#0" expanded="false" />
             <element signature="e#19918#24476#0" expanded="false" />
@@ -759,24 +774,7 @@
             <element signature="e#29056#33690#0" expanded="false" />
             <element signature="e#33696#38278#0" expanded="false" />
             <element signature="e#38288#42847#0" expanded="false" />
-            <element signature="e#47417#52000#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/components/Results/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="86" column="33" lean-forward="false" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

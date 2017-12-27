@@ -78,11 +78,15 @@ export class Results extends Component {
 
     render() {
         const matchInfo = this.props.matchInfo;
+        const gameLengthSeconds = matchInfo.gameLength % 1;
+        const gameLengthSecondsConverted = Math.trunc(gameLengthSeconds * 60);
+        const gameLengthMinute = Math.trunc(matchInfo.gameLength);
+
         if (matchInfo.championLevel !== undefined)
             return (
                 <MatchContainer>
 
-                    <h1>RECENT GAME: {matchInfo.gameLength} min</h1>
+                    <h1>RECENT GAME: {gameLengthMinute}m {gameLengthSecondsConverted}s</h1>
 
                     <Outcome victory={matchInfo.outcome === 'Victory'}>{matchInfo.outcome}</Outcome>
 
@@ -98,19 +102,19 @@ export class Results extends Component {
 
                     <ItemTable>
                         <tbody>
-                        <tr>
-                            <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[0], '.png')}/></td>
-                            <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[1], '.png')}/></td>
-                            <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[2], '.png')}/></td>
-                        </tr>
-                        <tr>
-                            <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[3], '.png')}/></td>
-                            <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[4], '.png')}/></td>
-                            <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[5], '.png')}/></td>
-                        </tr>
-                        <tr>
-                            <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[6], '.png')}/></td>
-                        </tr>
+                            <tr>
+                                <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[0], '.png') || ""}/></td>
+                                <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[1], '.png')}/></td>
+                                <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[2], '.png')}/></td>
+                            </tr>
+                            <tr>
+                                <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[3], '.png')}/></td>
+                                <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[4], '.png')}/></td>
+                                <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[5], '.png')}/></td>
+                            </tr>
+                            <tr>
+                                <td><ItemAvatar src={itemSpriteCdn.concat(matchInfo.items[6], '.png')}/></td>
+                            </tr>
                         </tbody>
                     </ItemTable>
                 </MatchContainer>
