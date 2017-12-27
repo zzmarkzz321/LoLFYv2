@@ -15,7 +15,7 @@ const _formatMatchData = (matchDetails, participantID, summonerName) => {
     const participantStats = participantBase.stats;
 
     const outcome = participantStats.win ? "Victory" : "Defeat";
-    const gameLength = matchDetails.gameDuration;
+    const gameLength = matchDetails.gameDuration / 60;
 
     const summonerSpells = [
         participantBase.spell1Id,
@@ -40,8 +40,8 @@ const _formatMatchData = (matchDetails, participantID, summonerName) => {
     const kda = kills + '/' + deaths + '/' + assists;
 
     const championLevel = participantStats.champLevel;
-    const creepScore = participantStats.totalMinionsKilled;
-    const creepScorePerMinute = Math.round(gameLength/creepScore);
+    const creepScore = participantStats.totalMinionsKilled + participantStats.neutralMinionsKilled;
+    const creepScorePerMinute = Math.round((gameLength/creepScore) * 10) / 10;
 
     let matchDetailsSchema = {
         outcome,
