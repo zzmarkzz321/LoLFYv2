@@ -1,2 +1,3 @@
+export * from './Home';
 export * from './SearchBox';
-export * from './Home'
+export * from './OverlayLoader';

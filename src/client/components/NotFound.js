@@ -2,8 +2,8 @@ import React from 'react';
 
 export const NotFound = () => (
     <div>
-        <h3>404 page not found</h3>
-        <p>We are sorry but the page you are looking for does not exist.</p>
+        <h3>Yikes! Looks like you just got 404'd</h3>
+        <p>Sorry but the Poro you are looking for is in another castle!</p>
     </div>
 );
 
