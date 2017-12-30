@@ -4475,33 +4475,41 @@ var itemSpriteCdn = 'http://ddragon.leagueoflegends.com/cdn/7.5.2/img/item/';
 (0, _reactEmotion.injectGlobal)('body{margin:0;padding:0;font-family:sans-serif;background-color:#222;color:white;}');
 
 var ChampionAvatar = /*#__PURE__*/(0, _reactEmotion2.default)('img', {
-    target: 'css-1ib7fh70'
+    target: 'css-166jxdx0'
 })('width:86px;height:86px;border-radius:50%;');
 
 var ItemAvatar = /*#__PURE__*/(0, _reactEmotion2.default)('img', {
-    target: 'css-1ib7fh71'
+    target: 'css-166jxdx1'
 })('width:46px;height:46px;border-radius:50%;');
 
 var ItemTable = /*#__PURE__*/(0, _reactEmotion2.default)('table', {
-    target: 'css-1ib7fh72'
+    target: 'css-166jxdx2'
 })('margin:0 auto;');
 
 var MatchContainer = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-    target: 'css-1ib7fh73'
+    target: 'css-166jxdx3'
 })('margin:5% 0%;text-align:center;');
 
 var Outcome = /*#__PURE__*/(0, _reactEmotion2.default)('h2', {
-    target: 'css-1ib7fh74'
+    target: 'css-166jxdx4'
 })('color:', function (props) {
     return props.victory ? 'green' : 'red';
 });
 
+var Navigation = /*#__PURE__*/(0, _reactEmotion2.default)('nav', {
+    target: 'css-166jxdx5'
+})('margin:5% 10%;display:block;');
+
+var HomeButton = /*#__PURE__*/(0, _reactEmotion2.default)('a', {
+    target: 'css-166jxdx6'
+})('font-size:35px;color:#fff;& span{color:#f00;}');
+
 var MatchListContainer = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-    target: 'css-1ib7fh75'
+    target: 'css-166jxdx7'
 })('display:block;margin:auto;text-align:center;');
 
 var RecentMatch = /*#__PURE__*/(0, _reactEmotion2.default)('li', {
-    target: 'css-1ib7fh76'
+    target: 'css-166jxdx8'
 })('display:flex;justify-content:space-evenly;list-style:none;');
 
 var RecentMatchesList = function RecentMatchesList(props) {
@@ -4563,108 +4571,126 @@ var Results = exports.Results = function (_Component) {
             var gameLengthMinute = Math.trunc(matchInfo.gameLength);
 
             if (matchInfo.championLevel !== undefined) return _react2.default.createElement(
-                MatchContainer,
+                'div',
                 null,
                 _react2.default.createElement(
-                    'h1',
-                    null,
-                    'RECENT GAME: ',
-                    gameLengthMinute,
-                    'm ',
-                    gameLengthSecondsConverted,
-                    's'
-                ),
-                _react2.default.createElement(
-                    Outcome,
-                    { victory: matchInfo.outcome === 'Victory' },
-                    matchInfo.outcome
-                ),
-                _react2.default.createElement(ChampionAvatar, { src: championSpriteCdn.concat(_common2.default[matchInfo.champion], '.png') }),
-                _react2.default.createElement(
-                    'h2',
-                    null,
-                    _common2.default[matchInfo.champion]
-                ),
-                _react2.default.createElement(
-                    'h2',
-                    null,
-                    matchInfo.summonerName
-                ),
-                _react2.default.createElement(
-                    'h3',
-                    null,
-                    'Level ',
-                    matchInfo.championLevel
-                ),
-                _react2.default.createElement(
-                    'p',
-                    null,
-                    matchInfo.kda,
-                    ' KDA'
-                ),
-                _react2.default.createElement(
-                    'p',
-                    null,
-                    matchInfo.creepScore,
-                    ' CS'
-                ),
-                _react2.default.createElement(
-                    'p',
-                    null,
-                    matchInfo.creepScorePerMinute,
-                    ' CS/Min'
-                ),
-                _react2.default.createElement(
-                    ItemTable,
+                    Navigation,
                     null,
                     _react2.default.createElement(
-                        'tbody',
+                        HomeButton,
+                        { href: '/#' },
+                        'LOL',
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            'FY'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    MatchContainer,
+                    null,
+                    _react2.default.createElement(
+                        'h1',
+                        null,
+                        'RECENT GAME: ',
+                        gameLengthMinute,
+                        'm ',
+                        gameLengthSecondsConverted,
+                        's'
+                    ),
+                    _react2.default.createElement(
+                        Outcome,
+                        { victory: matchInfo.outcome === 'Victory' },
+                        matchInfo.outcome
+                    ),
+                    _react2.default.createElement(ChampionAvatar, { src: championSpriteCdn.concat(_common2.default[matchInfo.champion], '.png') }),
+                    _react2.default.createElement(
+                        'h2',
+                        null,
+                        _common2.default[matchInfo.champion]
+                    ),
+                    _react2.default.createElement(
+                        'h2',
+                        null,
+                        matchInfo.summonerName
+                    ),
+                    _react2.default.createElement(
+                        'h3',
+                        null,
+                        'Level ',
+                        matchInfo.championLevel
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        matchInfo.kda,
+                        ' KDA'
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        matchInfo.creepScore,
+                        ' CS'
+                    ),
+                    _react2.default.createElement(
+                        'p',
+                        null,
+                        matchInfo.creepScorePerMinute,
+                        ' CS/Min'
+                    ),
+                    _react2.default.createElement(
+                        ItemTable,
                         null,
                         _react2.default.createElement(
-                            'tr',
+                            'tbody',
                             null,
                             _react2.default.createElement(
-                                'td',
+                                'tr',
                                 null,
-                                _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[0], '.png') })
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[0], '.png') })
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[1], '.png') })
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[2], '.png') })
+                                )
                             ),
                             _react2.default.createElement(
-                                'td',
+                                'tr',
                                 null,
-                                _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[1], '.png') })
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[3], '.png') })
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[4], '.png') })
+                                ),
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[5], '.png') })
+                                )
                             ),
                             _react2.default.createElement(
-                                'td',
+                                'tr',
                                 null,
-                                _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[2], '.png') })
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'tr',
-                            null,
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[3], '.png') })
-                            ),
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[4], '.png') })
-                            ),
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[5], '.png') })
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'tr',
-                            null,
-                            _react2.default.createElement(
-                                'td',
-                                null,
-                                _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[6], '.png') })
+                                _react2.default.createElement(
+                                    'td',
+                                    null,
+                                    _react2.default.createElement(ItemAvatar, { src: itemSpriteCdn.concat(matchInfo.items[6], '.png') })
+                                )
                             )
                         )
                     )
@@ -26414,18 +26440,18 @@ var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var loader = /*#__PURE__*/(0, _reactEmotion.css)('display:none;height:100%;width:100%;background-color:rgba(255,255,255,0.8);position:absolute;z-index:999;top:0;bottom:0;right:0;left:0;');
+var loader = /*#__PURE__*/(0, _reactEmotion.css)('display:none;height:100%;width:100%;background-color:rgba(255,255,255,0.9);position:absolute;z-index:999;top:0;bottom:0;right:0;left:0;');
 
 var LoadingWrapper = /*#__PURE__*/(0, _reactEmotion2.default)('div', {
-    target: 'css-1sukh5t0'
+    target: 'css-shqc5j0'
 })('margin:15% auto;');
 
 var Message = /*#__PURE__*/(0, _reactEmotion2.default)('h2', {
-    target: 'css-1sukh5t1'
+    target: 'css-shqc5j1'
 })('color:#000;text-align:center;');
 
 var Avatar = /*#__PURE__*/(0, _reactEmotion2.default)('img', {
-    target: 'css-1sukh5t2'
+    target: 'css-shqc5j2'
 })('width:106px;height:106px;border-radius:50%;');
 
 var OverlayLoader = exports.OverlayLoader = function OverlayLoader() {

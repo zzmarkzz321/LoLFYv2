@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { css, injectGlobal } from "react-emotion";
-import { SearchBox } from './';
-import { Results } from "../Results/index";
-import { OverlayLoader } from './OverlayLoader';
+import { SearchBox, OverlayLoader } from './';
+import { Results } from "../Results/";
 import Axios from 'axios';
 
 const app = css`
@@ -56,7 +55,6 @@ export class Home extends Component {
         this.setState({summonerName: event.target.value});
     };
 
-    // Handle the API call to the server
     _handleSubmit = (event) => {
         document.getElementById('loader-1').style.display = "block";
         Axios.request({
@@ -79,8 +77,7 @@ export class Home extends Component {
                 "championLevel": matchInfo.championLevel,
                 "creepScore": matchInfo.creepScore,
                 "creepScorePerMinute": matchInfo.creepScorePerMinute
-            })
-
+            });
         }).catch(err => {
             console.log(err);
         });
