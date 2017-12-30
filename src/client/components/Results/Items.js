@@ -4,13 +4,12 @@ import styled from "react-emotion";
 const itemSpriteCdn = 'http://ddragon.leagueoflegends.com/cdn/7.5.2/img/item/';
 
 const ItemAvatar = styled('img')`
-    width: 46px;
-    height: 46px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
 `;
 
 const ItemTable = styled('table')`
-    margin: 0 auto;
 `;
 
 export const Items = ({items}) => (
@@ -20,14 +19,12 @@ export const Items = ({items}) => (
             <td><ItemAvatar src={itemSpriteCdn.concat(items[0], '.png')} alt=""/></td>
             <td><ItemAvatar src={itemSpriteCdn.concat(items[1], '.png')} alt=""/></td>
             <td><ItemAvatar src={itemSpriteCdn.concat(items[2], '.png')} alt=""/></td>
+            <td><ItemAvatar src={itemSpriteCdn.concat(items[6], '.png')} alt=""/></td>
         </tr>
         <tr>
             <td><ItemAvatar src={itemSpriteCdn.concat(items[3], '.png')} alt=""/></td>
             <td><ItemAvatar src={itemSpriteCdn.concat(items[4], '.png')} alt=""/></td>
             <td><ItemAvatar src={itemSpriteCdn.concat(items[5], '.png')} alt=""/></td>
-        </tr>
-        <tr>
-            <td><ItemAvatar src={itemSpriteCdn.concat(items[6], '.png')} alt=""/></td>
         </tr>
         </tbody>
     </ItemTable>

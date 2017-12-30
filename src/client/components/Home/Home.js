@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { css, injectGlobal } from "react-emotion";
+import styled, { css, injectGlobal } from "react-emotion";
 import { SearchBox, OverlayLoader } from './';
 import { Results } from "../Results/";
 import { getSummonerData } from "../../utils/getSummonerData";
@@ -15,13 +15,14 @@ const app = css`
 `;
 
 const appHeader = css`
-    padding: 7%;
+    padding: 5%;
     color: white;
     & h1 {
-    font-size: 6em;
+        font-size: 6em;
+        line-height: 10px;
     }
     & h1 span {
-    color: #f00;
+        color: #f00;
     }
 `;
 
@@ -88,6 +89,7 @@ export class Home extends Component {
                         <h1>LOL<span>FY</span></h1>
                         <p>Quick and mini League of Legends Stats App.</p>
                     </div>
+
                     <SearchBox _handleChange={this._handleChange} _handleSubmit={this._handleSubmit}/>
                     <OverlayLoader/>
                 </div>
