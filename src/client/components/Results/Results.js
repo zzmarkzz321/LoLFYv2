@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { css, injectGlobal } from "react-emotion";
 
-import { Items, GameSummary, GameStats} from "./";
+import { Items, GameSummary, GameStats } from "./";
+import { SearchBox } from "../Home/SearchBox";
 
 injectGlobal`
     body {
@@ -14,6 +15,9 @@ injectGlobal`
 `;
 
 const MatchContainer = styled('section')`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     margin: 5% 0%;
     text-align: center;
 `;
@@ -24,7 +28,7 @@ const Navigation = styled('nav')`
     display: block;
 `;
 
-const homeButton = css`
+const HomeButton = styled('a')`
     font-size: 35px;
     color: #fff;
     & span {
@@ -32,13 +36,24 @@ const homeButton = css`
     }
 `;
 
+const SummonerName = styled('h1')`
+    margin-left: 10%;
+`;
+
+const _reload = () => {
+    window.location.reload();
+};
+
 export const Results = ({matchInfo}) => {
     if (matchInfo.championLevel !== undefined)
         return (
             <div>
                 <Navigation>
-                    <a className={homeButton}>LOL<span>FY</span></a>
+                    <HomeButton onClick={_reload}>LOL<span>FY</span></HomeButton>
                 </Navigation>
+
+                <SummonerName>{matchInfo.summonerName}</SummonerName>
+
                 <MatchContainer>
                     <GameSummary matchInfo={matchInfo}/>
                     <GameStats matchInfo={matchInfo}/>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled, { css } from "react-emotion";
 
+const summonerIconCDN = 'http://ddragon.leagueoflegends.com/cdn/6.3.1/img/profileicon/777.png';
+
 const loader = css`
     display: none;
     height: 100%;
@@ -32,7 +34,7 @@ const Avatar = styled('img')`
 export const OverlayLoader = () => (
     <div id="loader-1" className={loader}>
         <LoadingWrapper>
-            <Avatar src='http://ddragon.leagueoflegends.com/cdn/6.3.1/img/profileicon/777.png'/>
+            <Avatar src={summonerIconCDN}/>
             <Message>Hang Tight! Doing some quick maths.</Message>
         </LoadingWrapper>
     </div>
