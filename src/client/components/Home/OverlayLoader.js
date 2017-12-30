@@ -5,7 +5,7 @@ const loader = css`
     display: none;
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.94);
     position: absolute;
     z-index: 999;
     top: 0;
@@ -33,7 +33,7 @@ export const OverlayLoader = () => (
     <div id="loader-1" className={loader}>
         <LoadingWrapper>
             <Avatar src='http://ddragon.leagueoflegends.com/cdn/6.3.1/img/profileicon/777.png'/>
-            <Message>Hang Tight! Doing some quick maths</Message>
+            <Message>Hang Tight! Doing some quick maths.</Message>
         </LoadingWrapper>
     </div>
 );
