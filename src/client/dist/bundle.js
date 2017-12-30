@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 48);
+/******/ 	return __webpack_require__(__webpack_require__.s = 47);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,9 +71,9 @@
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(49);
+  module.exports = __webpack_require__(48);
 } else {
-  module.exports = __webpack_require__(50);
+  module.exports = __webpack_require__(49);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -362,11 +362,11 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(63)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(62)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(64)();
+  module.exports = __webpack_require__(63)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -378,8 +378,8 @@ if (process.env.NODE_ENV !== 'production') {
 "use strict";
 
 
-var bind = __webpack_require__(43);
-var isBuffer = __webpack_require__(102);
+var bind = __webpack_require__(42);
+var isBuffer = __webpack_require__(101);
 
 /*global toString:true*/
 
@@ -742,48 +742,6 @@ module.exports = invariant;
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
-function makeEmptyFunction(arg) {
-  return function () {
-    return arg;
-  };
-}
-
-/**
- * This function accepts and discards inputs; it has no side effects. This is
- * primarily useful idiomatically for overridable function endpoints which
- * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
- */
-var emptyFunction = function emptyFunction() {};
-
-emptyFunction.thatReturns = makeEmptyFunction;
-emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-emptyFunction.thatReturnsThis = function () {
-  return this;
-};
-emptyFunction.thatReturnsArgument = function (arg) {
-  return arg;
-};
-
-module.exports = emptyFunction;
-
-/***/ }),
-/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -983,6 +941,48 @@ var createStyled = function createStyled(tag, options) {
 //# sourceMappingURL=index.es.js.map
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * 
+ */
+
+function makeEmptyFunction(arg) {
+  return function () {
+    return arg;
+  };
+}
+
+/**
+ * This function accepts and discards inputs; it has no side effects. This is
+ * primarily useful idiomatically for overridable function endpoints which
+ * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+ */
+var emptyFunction = function emptyFunction() {};
+
+emptyFunction.thatReturns = makeEmptyFunction;
+emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+emptyFunction.thatReturnsThis = function () {
+  return this;
+};
+emptyFunction.thatReturnsArgument = function (arg) {
+  return arg;
+};
+
+module.exports = emptyFunction;
 
 /***/ }),
 /* 8 */
@@ -1318,7 +1318,7 @@ module.exports = emptyObject;
 
 
 
-var emptyFunction = __webpack_require__(6);
+var emptyFunction = __webpack_require__(7);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -1844,7 +1844,7 @@ Router.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -2009,7 +2009,7 @@ var createTransitionManager = function createTransitionManager() {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(4);
-var normalizeHeaderName = __webpack_require__(104);
+var normalizeHeaderName = __webpack_require__(103);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -2025,10 +2025,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(44);
+    adapter = __webpack_require__(43);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(44);
+    adapter = __webpack_require__(43);
   }
   return adapter;
 }
@@ -2156,7 +2156,7 @@ module.exports = ExecutionEnvironment;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(6);
+var emptyFunction = __webpack_require__(7);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -2350,7 +2350,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(53);
+var isTextNode = __webpack_require__(52);
 
 /*eslint-disable no-bitwise */
 
@@ -2937,7 +2937,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Home = __webpack_require__(90);
+var _Home = __webpack_require__(89);
 
 Object.keys(_Home).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -2949,7 +2949,7 @@ Object.keys(_Home).forEach(function (key) {
   });
 });
 
-var _SearchBox = __webpack_require__(41);
+var _SearchBox = __webpack_require__(119);
 
 Object.keys(_SearchBox).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -2961,7 +2961,7 @@ Object.keys(_SearchBox).forEach(function (key) {
   });
 });
 
-var _OverlayLoader = __webpack_require__(119);
+var _OverlayLoader = __webpack_require__(120);
 
 Object.keys(_OverlayLoader).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -2969,6 +2969,18 @@ Object.keys(_OverlayLoader).forEach(function (key) {
     enumerable: true,
     get: function get() {
       return _OverlayLoader[key];
+    }
+  });
+});
+
+var _GithubRibbon = __webpack_require__(121);
+
+Object.keys(_GithubRibbon).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _GithubRibbon[key];
     }
   });
 });
@@ -4023,7 +4035,7 @@ var unitless = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return hydrate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return flush; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_emotion_utils__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylis_rule_sheet__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylis_rule_sheet__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylis_rule_sheet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_stylis_rule_sheet__);
 
 
@@ -4458,7 +4470,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Results = __webpack_require__(92);
+var _Results = __webpack_require__(91);
 
 Object.keys(_Results).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -4470,7 +4482,7 @@ Object.keys(_Results).forEach(function (key) {
   });
 });
 
-var _GameSummary = __webpack_require__(93);
+var _GameSummary = __webpack_require__(92);
 
 Object.keys(_GameSummary).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -4482,7 +4494,7 @@ Object.keys(_GameSummary).forEach(function (key) {
   });
 });
 
-var _GameStats = __webpack_require__(96);
+var _GameStats = __webpack_require__(95);
 
 Object.keys(_GameStats).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -4494,7 +4506,7 @@ Object.keys(_GameStats).forEach(function (key) {
   });
 });
 
-var _Items = __webpack_require__(97);
+var _Items = __webpack_require__(96);
 
 Object.keys(_Items).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -4506,7 +4518,7 @@ Object.keys(_Items).forEach(function (key) {
   });
 });
 
-var _SummonerSpells = __webpack_require__(42);
+var _SummonerSpells = __webpack_require__(41);
 
 Object.keys(_SummonerSpells).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -4518,7 +4530,7 @@ Object.keys(_SummonerSpells).forEach(function (key) {
   });
 });
 
-var _RecentMatches = __webpack_require__(98);
+var _RecentMatches = __webpack_require__(97);
 
 Object.keys(_RecentMatches).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -4540,85 +4552,49 @@ Object.keys(_RecentMatches).forEach(function (key) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.SearchBox = undefined;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactEmotion = __webpack_require__(7);
-
-var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var searchWrapper = /*#__PURE__*/(0, _reactEmotion.css)('display:inline-flex;width:300px;vertical-align:middle;white-space:nowrap;position:relative;& input{outline:none;width:300px;height:50px;background:#2b303b;border:none;font-size:10pt;float:left;color:#63717f;padding-left:45px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}& i{position:absolute;top:50%;margin-left:15px;margin-top:-7px;z-index:1;color:#4f5b66;}');
-
-var SearchInput = /*#__PURE__*/(0, _reactEmotion2.default)('input', {
-    target: 'css-x0e21p0'
-})('background:#fff;border:1px solid rgba(34,36,38,.15);color:rgba(0,0,0,.87);border-radius:.28571429rem;padding:1%;font-family:Lato,\'Helvetica Neue\',Arial,Helvetica,sans-serif;');
-
-var SearchBox = exports.SearchBox = function SearchBox(props) {
-    return _react2.default.createElement(
-        'form',
-        { onSubmit: props._handleSubmit },
-        _react2.default.createElement(
-            'div',
-            { className: searchWrapper },
-            _react2.default.createElement('i', { className: 'fa fa-search' }),
-            _react2.default.createElement(SearchInput, { type: 'text', placeholder: 'Search...', onChange: props._handleChange })
-        )
-    );
-};
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 exports.SummonerSpells = undefined;
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactEmotion = __webpack_require__(7);
+var _reactEmotion = __webpack_require__(6);
 
 var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
-var _summonerSpellInfo = __webpack_require__(95);
+var _summonerSpellInfo = __webpack_require__(94);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SpellIcon = /*#__PURE__*/(0, _reactEmotion2.default)('img', {
-    target: 'css-1u9gn450'
-})('width:36px;height:36px;');
+    target: 'css-pqcc9u0'
+})('width:27px;height:27px;');
 
 var SummonerSpells = exports.SummonerSpells = function SummonerSpells(_ref) {
     var summonerSpells = _ref.summonerSpells;
 
-    var summonerSpell1CDN = _summonerSpellInfo.summonerSpellInfo.filter(function (x) {
-        return x.key === summonerSpells[0];
-    })[0].icon;
-    var summonerSpell2CDN = _summonerSpellInfo.summonerSpellInfo.filter(function (x) {
-        return x.key === summonerSpells[1];
-    })[0].icon;
+    var summs = _summonerSpellInfo.summonerSpellInfo.data;
+    var summonerSpellAvatarCDN = 'https://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/';
+    var summonerSpell1 = {};
+    var summonerSpell2 = {};
+
+    Object.keys(summs).forEach(function (key) {
+        if (summs[key].id === summonerSpells[0]) summonerSpell1 = summs[key];
+        if (summs[key].id === summonerSpells[1]) summonerSpell2 = summs[key];
+    });
+
+    console.log(summonerSpell1);
 
     return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(SpellIcon, { src: summonerSpell1CDN }),
-        _react2.default.createElement(SpellIcon, { src: summonerSpell2CDN })
+        _react2.default.createElement(SpellIcon, { src: summonerSpellAvatarCDN.concat(summonerSpell1.image.full), alt: '' }),
+        _react2.default.createElement(SpellIcon, { src: summonerSpellAvatarCDN.concat(summonerSpell2.image.full), alt: '' })
     );
 };
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4636,19 +4612,19 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(4);
-var settle = __webpack_require__(105);
-var buildURL = __webpack_require__(107);
-var parseHeaders = __webpack_require__(108);
-var isURLSameOrigin = __webpack_require__(109);
-var createError = __webpack_require__(45);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(110);
+var settle = __webpack_require__(104);
+var buildURL = __webpack_require__(106);
+var parseHeaders = __webpack_require__(107);
+var isURLSameOrigin = __webpack_require__(108);
+var createError = __webpack_require__(44);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(109);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -4745,7 +4721,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(111);
+      var cookies = __webpack_require__(110);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -4824,13 +4800,13 @@ module.exports = function xhrAdapter(config) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(106);
+var enhanceError = __webpack_require__(105);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -4849,7 +4825,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4861,7 +4837,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4887,7 +4863,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4897,16 +4873,16 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(51);
+var _reactDom = __webpack_require__(50);
 
-var _App = __webpack_require__(60);
+var _App = __webpack_require__(59);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactDom.render)(_react2.default.createElement(_App.App, null), document.getElementById('root'));
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4919,7 +4895,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(8),n=__webpack_require__(12),p=__webpack_require__(6),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(8),n=__webpack_require__(12),p=__webpack_require__(7),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -4934,7 +4910,7 @@ isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4959,7 +4935,7 @@ var _assign = __webpack_require__(8);
 var emptyObject = __webpack_require__(12);
 var invariant = __webpack_require__(9);
 var warning = __webpack_require__(13);
-var emptyFunction = __webpack_require__(6);
+var emptyFunction = __webpack_require__(7);
 var checkPropTypes = __webpack_require__(15);
 
 // TODO: this is special because it gets imported during build.
@@ -6299,7 +6275,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6337,15 +6313,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(52);
+  module.exports = __webpack_require__(51);
 } else {
-  module.exports = __webpack_require__(55);
+  module.exports = __webpack_require__(54);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6361,7 +6337,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(0),l=__webpack_require__(24),B=__webpack_require__(8),C=__webpack_require__(6),ba=__webpack_require__(25),da=__webpack_require__(26),ea=__webpack_require__(27),fa=__webpack_require__(28),ia=__webpack_require__(29),D=__webpack_require__(12);
+var aa=__webpack_require__(0),l=__webpack_require__(24),B=__webpack_require__(8),C=__webpack_require__(7),ba=__webpack_require__(25),da=__webpack_require__(26),ea=__webpack_require__(27),fa=__webpack_require__(28),ia=__webpack_require__(29),D=__webpack_require__(12);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -6581,7 +6557,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6596,7 +6572,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
  * @typechecks
  */
 
-var isNode = __webpack_require__(54);
+var isNode = __webpack_require__(53);
 
 /**
  * @param {*} object The object to check.
@@ -6609,7 +6585,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6637,7 +6613,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6663,7 +6639,7 @@ var invariant = __webpack_require__(9);
 var warning = __webpack_require__(13);
 var ExecutionEnvironment = __webpack_require__(24);
 var _assign = __webpack_require__(8);
-var emptyFunction = __webpack_require__(6);
+var emptyFunction = __webpack_require__(7);
 var EventListener = __webpack_require__(25);
 var getActiveElement = __webpack_require__(26);
 var shallowEqual = __webpack_require__(27);
@@ -6671,8 +6647,8 @@ var containsNode = __webpack_require__(28);
 var focusNode = __webpack_require__(29);
 var emptyObject = __webpack_require__(12);
 var checkPropTypes = __webpack_require__(15);
-var hyphenateStyleName = __webpack_require__(56);
-var camelizeStyleName = __webpack_require__(58);
+var hyphenateStyleName = __webpack_require__(55);
+var camelizeStyleName = __webpack_require__(57);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -22039,7 +22015,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22054,7 +22030,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(57);
+var hyphenate = __webpack_require__(56);
 
 var msPattern = /^ms-/;
 
@@ -22081,7 +22057,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22117,7 +22093,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22132,7 +22108,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(59);
+var camelize = __webpack_require__(58);
 
 var msPattern = /^-ms-/;
 
@@ -22160,7 +22136,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22195,7 +22171,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22210,11 +22186,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(61);
+var _reactRouterDom = __webpack_require__(60);
 
 var _Home = __webpack_require__(37);
 
-var _NotFound = __webpack_require__(120);
+var _NotFound = __webpack_require__(122);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22232,36 +22208,36 @@ var App = exports.App = function App() {
 };
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(61);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(65);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(33);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(67);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(70);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "NavLink", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(73);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_5__Prompt__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(75);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(34);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(19);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(81);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(83);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(85);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_11__matchPath__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(86);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_12__withRouter__["a"]; });
 
 
@@ -22291,7 +22267,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22301,7 +22277,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(19);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22358,7 +22334,7 @@ BrowserRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (BrowserRouter);
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22371,7 +22347,7 @@ BrowserRouter.propTypes = {
 
 
 
-var emptyFunction = __webpack_require__(6);
+var emptyFunction = __webpack_require__(7);
 var invariant = __webpack_require__(9);
 var warning = __webpack_require__(13);
 var assign = __webpack_require__(8);
@@ -22908,7 +22884,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22921,7 +22897,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 
-var emptyFunction = __webpack_require__(6);
+var emptyFunction = __webpack_require__(7);
 var invariant = __webpack_require__(9);
 var ReactPropTypesSecret = __webpack_require__(16);
 
@@ -22973,7 +22949,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23286,7 +23262,7 @@ var createBrowserHistory = function createBrowserHistory() {
 exports.default = createBrowserHistory;
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23296,7 +23272,7 @@ exports.default = createBrowserHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(19);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23352,7 +23328,7 @@ HashRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (HashRouter);
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23682,18 +23658,18 @@ var createHashHistory = function createHashHistory() {
 exports.default = createHashHistory;
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__ = __webpack_require__(68);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__["a" /* default */]);
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23703,7 +23679,7 @@ exports.default = createHashHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(20);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23760,7 +23736,7 @@ MemoryRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (MemoryRouter);
 
 /***/ }),
-/* 70 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23936,7 +23912,7 @@ var createMemoryHistory = function createMemoryHistory() {
 exports.default = createMemoryHistory;
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24017,10 +23993,10 @@ NavLink.defaultProps = {
 /* harmony default export */ __webpack_exports__["a"] = (NavLink);
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(73)
+var isarray = __webpack_require__(72)
 
 /**
  * Expose `pathToRegexp`.
@@ -24449,7 +24425,7 @@ function pathToRegexp (path, keys, options) {
 
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = Array.isArray || function (arr) {
@@ -24458,18 +24434,18 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__ = __webpack_require__(74);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__["a" /* default */]);
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24560,18 +24536,18 @@ Prompt.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Prompt);
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__ = __webpack_require__(76);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__["a" /* default */]);
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24583,7 +24559,7 @@ Prompt.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(77);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -24679,15 +24655,15 @@ Redirect.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Redirect);
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(78);
 /* unused harmony reexport createBrowserHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(79);
 /* unused harmony reexport createHashHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(80);
 /* unused harmony reexport createMemoryHistory */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(14);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
@@ -24706,7 +24682,7 @@ Redirect.contextTypes = {
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25010,7 +24986,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createBrowserHistory);
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25331,7 +25307,7 @@ var createHashHistory = function createHashHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createHashHistory);
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25499,18 +25475,18 @@ var createMemoryHistory = function createMemoryHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createMemoryHistory);
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__ = __webpack_require__(82);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__["a" /* default */]);
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25693,18 +25669,18 @@ StaticRouter.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (StaticRouter);
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__ = __webpack_require__(84);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__["a" /* default */]);
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25798,7 +25774,7 @@ Switch.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Switch);
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25809,18 +25785,18 @@ Switch.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__["a" /* default */]);
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__ = __webpack_require__(87);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__["a" /* default */]);
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25828,7 +25804,7 @@ Switch.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(35);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -25865,7 +25841,7 @@ var withRouter = function withRouter(Component) {
 /* harmony default export */ __webpack_exports__["a"] = (withRouter);
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25937,7 +25913,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25954,7 +25930,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactEmotion = __webpack_require__(7);
+var _reactEmotion = __webpack_require__(6);
 
 var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
@@ -25962,7 +25938,9 @@ var _ = __webpack_require__(37);
 
 var _Results = __webpack_require__(40);
 
-var _getSummonerData = __webpack_require__(99);
+var _getSummonerData = __webpack_require__(98);
+
+var _Footer = __webpack_require__(118);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25972,11 +25950,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+(0, _reactEmotion.injectGlobal)('body{margin:0;padding:0;font-family:Lato,\'Helvetica Neue\',Arial,Helvetica,sans-serif;;}');
+
 var app = /*#__PURE__*/(0, _reactEmotion.css)('text-align:center;background-color:#222;color:#fff;height:100vh;& a{color:#f60;}');
 
 var appHeader = /*#__PURE__*/(0, _reactEmotion.css)('padding:5%;color:white;& h1{font-size:6em;line-height:10px;}& h1 span{color:#f00;}');
-
-(0, _reactEmotion.injectGlobal)('body{margin:0;padding:0;font-family:sans-serif;}');
 
 var Home = exports.Home = function (_Component) {
     _inherits(Home, _Component);
@@ -26036,6 +26014,7 @@ var Home = exports.Home = function (_Component) {
                 return _react2.default.createElement(
                     'div',
                     { className: app },
+                    _react2.default.createElement(_.GithubRibbon, null),
                     _react2.default.createElement(
                         'div',
                         { className: appHeader },
@@ -26052,10 +26031,11 @@ var Home = exports.Home = function (_Component) {
                         _react2.default.createElement(
                             'p',
                             null,
-                            'Quick and mini League of Legends Stats App.'
+                            'A mini League of Legends Stats App'
                         )
                     ),
                     _react2.default.createElement(_.SearchBox, { _handleChange: this._handleChange, _handleSubmit: this._handleSubmit }),
+                    _react2.default.createElement(_Footer.Footer, null),
                     _react2.default.createElement(_.OverlayLoader, null)
                 );
             }
@@ -26067,7 +26047,7 @@ var Home = exports.Home = function (_Component) {
 }(_react.Component);
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function (factory) {
@@ -26121,7 +26101,7 @@ var Home = exports.Home = function (_Component) {
 
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26136,32 +26116,30 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactEmotion = __webpack_require__(7);
+var _reactEmotion = __webpack_require__(6);
 
 var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
 var _ = __webpack_require__(40);
 
-var _SearchBox = __webpack_require__(41);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _reactEmotion.injectGlobal)("body{margin:0;padding:0;font-family:sans-serif;background-color:#222;color:white;}");
+(0, _reactEmotion.injectGlobal)("body{margin:0;padding:0;font-family:Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;;background-color:#222;color:white;}a:hover{cursor:pointer;text-decoration:underline;}");
 
 var MatchContainer = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-    target: "css-lu1mey0"
-})("display:flex;justify-content:space-evenly;align-items:center;margin:5% 0%;text-align:center;");
+    target: "css-5q7t550"
+})("display:flex;justify-content:space-around;align-items:center;text-align:center;background:rgba(255,0,0,0.4);margin:5% 10%;");
 
 var Navigation = /*#__PURE__*/(0, _reactEmotion2.default)('nav', {
-    target: "css-lu1mey1"
+    target: "css-5q7t551"
 })("margin:5% 10%;display:block;");
 
 var HomeButton = /*#__PURE__*/(0, _reactEmotion2.default)('a', {
-    target: "css-lu1mey2"
+    target: "css-5q7t552"
 })("font-size:35px;color:#fff;& span{color:#f00;}");
 
 var SummonerName = /*#__PURE__*/(0, _reactEmotion2.default)('h1', {
-    target: "css-lu1mey3"
+    target: "css-5q7t553"
 })("margin-left:10%;");
 
 var _reload = function _reload() {
@@ -26214,7 +26192,7 @@ var Results = exports.Results = function Results(_ref) {
 };
 
 /***/ }),
-/* 93 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26229,33 +26207,45 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _common = __webpack_require__(94);
+var _common = __webpack_require__(93);
 
 var _common2 = _interopRequireDefault(_common);
 
-var _reactEmotion = __webpack_require__(7);
+var _reactEmotion = __webpack_require__(6);
 
 var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
-var _SummonerSpells = __webpack_require__(42);
+var _SummonerSpells = __webpack_require__(41);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var championSpriteCdn = 'http://ddragon.leagueoflegends.com/cdn/7.5.2/img/champion/';
 
-var Outcome = /*#__PURE__*/(0, _reactEmotion2.default)('h2', {
-    target: 'css-zu1mc40'
+var Outcome = /*#__PURE__*/(0, _reactEmotion2.default)('h4', {
+    target: 'css-1qgooc20'
 })('color:', function (props) {
     return props.victory ? 'green' : 'red';
-});
+}, ';line-height:0;');
+
+var GameDuration = /*#__PURE__*/(0, _reactEmotion2.default)('h4', {
+    target: 'css-1qgooc21'
+})('line-height:0;');
+
+var ChampionLevel = /*#__PURE__*/(0, _reactEmotion2.default)('h4', {
+    target: 'css-1qgooc22'
+})();
 
 var ChampionAvatar = /*#__PURE__*/(0, _reactEmotion2.default)('img', {
-    target: 'css-zu1mc41'
-})('width:86px;height:86px;border-radius:50%;');
+    target: 'css-1qgooc23'
+})('width:70px;height:70px;border-radius:50%;');
 
 var SummaryContainer = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-    target: 'css-zu1mc42'
+    target: 'css-1qgooc24'
 })('display:flex;justify-content:space-evenly;align-items:center;');
+
+var ChampSumWrapper = /*#__PURE__*/(0, _reactEmotion2.default)('div', {
+    target: 'css-1qgooc25'
+})();
 
 var GameSummary = exports.GameSummary = function GameSummary(_ref) {
     var matchInfo = _ref.matchInfo;
@@ -26276,7 +26266,7 @@ var GameSummary = exports.GameSummary = function GameSummary(_ref) {
                 matchInfo.outcome
             ),
             _react2.default.createElement(
-                'p',
+                GameDuration,
                 null,
                 gameLengthMinute,
                 'm ',
@@ -26284,14 +26274,14 @@ var GameSummary = exports.GameSummary = function GameSummary(_ref) {
                 's'
             ),
             _react2.default.createElement(
-                'p',
+                ChampionLevel,
                 null,
                 'Level ',
                 matchInfo.championLevel
             )
         ),
         _react2.default.createElement(
-            'div',
+            ChampSumWrapper,
             null,
             _react2.default.createElement(ChampionAvatar, { src: championSpriteCdn.concat(_common2.default[matchInfo.champion], '.png') }),
             _react2.default.createElement(_SummonerSpells.SummonerSpells, { summonerSpells: matchInfo.summonerSpells })
@@ -26309,7 +26299,7 @@ var GameSummary = exports.GameSummary = function GameSummary(_ref) {
 };
 
 /***/ }),
-/* 94 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26461,244 +26451,334 @@ exports.default = {
 };
 
 /***/ }),
-/* 95 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+/**
+ * RIOT Static Data v3: Summoner Spells
+ * updated 12/29/2017
+ *
+ */
+
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var summonerSpellInfo = exports.summonerSpellInfo = [{
-    "id": "barrier",
-    "name": "Barrier",
-    "description": "Shields your champion from 115-455 damage (depending on champion level) for 2 seconds.",
-    "tooltip": "Temporarily shields {{ f1 }} damage from your champion for 2 seconds.",
-    "cooldown": 180,
-    "key": 21,
-    "summonerLevel": 4,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerBarrier.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 0,
-        "y": 0
+var summonerSpellInfo = exports.summonerSpellInfo = {
+    "type": "summoner",
+    "version": "7.24.2",
+    "data": {
+        "SummonerSiegeChampSelect2": {
+            "name": "Nexus Siege: Siege Weapon Slot",
+            "image": {
+                "full": "SummonerSiegeChampSelect2.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 48,
+                "x": 144
+            },
+            "key": "SummonerSiegeChampSelect2",
+            "summonerLevel": 1,
+            "id": 34,
+            "description": "In Nexus Siege, Summoner Spells are replaced with Siege Weapon Slots. Spend Crystal Shards to buy single-use Siege Weapons from the item shop, then use your Summoner Spell keys to activate them!"
+        },
+        "SummonerTeleport": {
+            "name": "Teleport",
+            "image": {
+                "full": "SummonerTeleport.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 48,
+                "x": 384
+            },
+            "key": "SummonerTeleport",
+            "summonerLevel": 7,
+            "id": 12,
+            "description": "After channeling for 4.5 seconds, teleports your champion to target allied structure, minion, or ward."
+        },
+        "SummonerSiegeChampSelect1": {
+            "name": "Nexus Siege: Siege Weapon Slot",
+            "image": {
+                "full": "SummonerSiegeChampSelect1.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 48,
+                "x": 96
+            },
+            "key": "SummonerSiegeChampSelect1",
+            "summonerLevel": 1,
+            "id": 33,
+            "description": "In Nexus Siege, Summoner Spells are replaced with Siege Weapon Slots. Spend Crystal Shards to buy single-use Siege Weapons from the item shop, then use your Summoner Spell keys to activate them!"
+        },
+        "SummonerExhaust": {
+            "name": "Exhaust",
+            "image": {
+                "full": "SummonerExhaust.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 240
+            },
+            "key": "SummonerExhaust",
+            "summonerLevel": 4,
+            "id": 3,
+            "description": "Exhausts target enemy champion, reducing their Movement Speed by 30%, and their damage dealt by 40% for 2.5 seconds."
+        },
+        "SummonerBarrier": {
+            "name": "Barrier",
+            "image": {
+                "full": "SummonerBarrier.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 0
+            },
+            "key": "SummonerBarrier",
+            "summonerLevel": 4,
+            "id": 21,
+            "description": "Shields your champion from 115-455 damage (depending on champion level) for 2 seconds."
+        },
+        "SummonerMana": {
+            "name": "Clarity",
+            "image": {
+                "full": "SummonerMana.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 432
+            },
+            "key": "SummonerMana",
+            "summonerLevel": 6,
+            "id": 13,
+            "description": "Restores 50% of your champion's maximum Mana. Also restores allies for 25% of their maximum Mana."
+        },
+        "SummonerSnowURFSnowball_Mark": {
+            "name": "Ultra (Rapidly Flung) Mark",
+            "image": {
+                "full": "SummonerSnowURFSnowball_Mark.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 48,
+                "x": 240
+            },
+            "key": "SummonerSnowURFSnowball_Mark",
+            "summonerLevel": 6,
+            "id": 39,
+            "description": "It's a snowball! It's a Poro! It's...uh...one of those."
+        },
+        "SummonerFlash": {
+            "name": "Flash",
+            "image": {
+                "full": "SummonerFlash.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 288
+            },
+            "key": "SummonerFlash",
+            "summonerLevel": 7,
+            "id": 4,
+            "description": "Teleports your champion a short distance toward your cursor's location."
+        },
+        "SummonerSnowball": {
+            "name": "Mark",
+            "image": {
+                "full": "SummonerSnowball.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 48,
+                "x": 336
+            },
+            "key": "SummonerSnowball",
+            "summonerLevel": 6,
+            "id": 32,
+            "description": "Throw a snowball in a straight line at your enemies. If it hits an enemy, they become marked, granting True Sight, and your champion can quickly travel to the marked target as a follow up."
+        },
+        "SummonerDot": {
+            "name": "Ignite",
+            "image": {
+                "full": "SummonerDot.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 192
+            },
+            "key": "SummonerDot",
+            "summonerLevel": 9,
+            "id": 14,
+            "description": "Ignites target enemy champion, dealing 70-410 true damage (depending on champion level) over 5 seconds, grants you vision of the target, and reduces healing effects on them for the duration."
+        },
+        "SummonerDarkStarChampSelect2": {
+            "name": "Disabled Summoner Spells",
+            "image": {
+                "full": "SummonerDarkStarChampSelect2.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 144
+            },
+            "key": "SummonerDarkStarChampSelect2",
+            "summonerLevel": 1,
+            "id": 36,
+            "description": "Summoner spells are disabled in this mode."
+        },
+        "SummonerDarkStarChampSelect1": {
+            "name": "Disabled Summoner Spells",
+            "image": {
+                "full": "SummonerDarkStarChampSelect1.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 96
+            },
+            "key": "SummonerDarkStarChampSelect1",
+            "summonerLevel": 1,
+            "id": 35,
+            "description": "Summoner spells are disabled in this mode."
+        },
+        "SummonerPoroRecall": {
+            "name": "To the King!",
+            "image": {
+                "full": "SummonerPoroRecall.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 48,
+                "x": 0
+            },
+            "key": "SummonerPoroRecall",
+            "summonerLevel": 1,
+            "id": 30,
+            "description": "Quickly travel to the Poro King's side."
+        },
+        "SummonerHaste": {
+            "name": "Ghost",
+            "image": {
+                "full": "SummonerHaste.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 336
+            },
+            "key": "SummonerHaste",
+            "summonerLevel": 1,
+            "id": 6,
+            "description": "Your champion gains increased Movement Speed and can move through units for 10 seconds. Grants a maximum of 28-45% (depending on champion level) Movement Speed after accelerating for 2 seconds."
+        },
+        "SummonerSnowURFSnowball_Mark_FollowupCast": {
+            "name": "Ultra (Really Fast) Dash",
+            "image": {
+                "full": "SummonerSnowURFSnowball_Mark_FollowupCast.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 48,
+                "x": 288
+            },
+            "key": "SummonerSnowURFSnowball_Mark_FollowupCast",
+            "summonerLevel": 0,
+            "id": -1,
+            "description": "Quickly travel to the unit you hit with Ultra Mark."
+        },
+        "SummonerHeal": {
+            "name": "Heal",
+            "image": {
+                "full": "SummonerHeal.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 384
+            },
+            "key": "SummonerHeal",
+            "summonerLevel": 1,
+            "id": 7,
+            "description": "Restores 90-345 Health (depending on champion level) and grants 30% Movement Speed for 1 second to you and target allied champion. This healing is halved for units recently affected by Summoner Heal."
+        },
+        "SummonerPoroThrow": {
+            "name": "Poro Toss",
+            "image": {
+                "full": "SummonerPoroThrow.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 48,
+                "x": 48
+            },
+            "key": "SummonerPoroThrow",
+            "summonerLevel": 1,
+            "id": 31,
+            "description": "Toss a Poro at your enemies. If it hits, you can quickly travel to your target as a follow up."
+        },
+        "SummonerBoost": {
+            "name": "Cleanse",
+            "image": {
+                "full": "SummonerBoost.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 0,
+                "x": 48
+            },
+            "key": "SummonerBoost",
+            "summonerLevel": 9,
+            "id": 1,
+            "description": "Removes all disables (excluding suppression and airborne) and summoner spell debuffs affecting your champion and lowers the duration of incoming disables by 65% for 3 seconds."
+        },
+        "SummonerSmite": {
+            "name": "Smite",
+            "image": {
+                "full": "SummonerSmite.png",
+                "group": "spell",
+                "sprite": "spell0.png",
+                "h": 48,
+                "w": 48,
+                "y": 48,
+                "x": 192
+            },
+            "key": "SummonerSmite",
+            "summonerLevel": 9,
+            "id": 11,
+            "description": "Deals 390-1000 true damage (depending on champion level) to target epic, large, or medium monster or enemy minion. Restores Health based on your maximum life when used against monsters."
+        }
     }
-}, {
-    "id": "boost",
-    "name": "Cleanse",
-    "description": "Removes all disables (excluding suppression) and summoner spell debuffs affecting your champion and lowers the duration of incoming disables by 65% for 3 seconds.",
-    "tooltip": "Removes all disables (excluding suppression) and summoner spell debuffs affecting your champion and reduces the duration of disables by 65% for the next {{ f1 }} seconds.",
-    "cooldown": 210,
-    "key": 1,
-    "summonerLevel": 6,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerBoost.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 48,
-        "y": 0
-    }
-}, {
-    "id": "dot",
-    "name": "Ignite",
-    "description": "Ignites target enemy champion, dealing 70-410 true damage (depending on champion level) over 5 seconds, grants you vision of the target, and reduces healing effects on them for the duration.",
-    "tooltip": "Ignite deals <span class=\"colorFEFCFF\">{{ f1 }}</span> true damage to target enemy champion over 5 seconds, grants you vision of the target and applies Grievous Wounds for the duration.<br><br><rules>(Grievous Wounds reduces healing effects by 40%. This vision does not reveal stealthed enemies.)</rules>",
-    "cooldown": 210,
-    "key": 14,
-    "summonerLevel": 10,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerDot.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 96,
-        "y": 0
-    }
-}, {
-    "id": "exhaust",
-    "name": "Exhaust",
-    "description": "Exhausts target enemy champion, reducing their Movement Speed by 30%, and their damage dealt by 40% for 2.5 seconds.",
-    "tooltip": "Exhausts target enemy champion, reducing their Movement Speed by {{ f3 }}%, and their damage dealt by {{ f2 }}% for 2.5 seconds.",
-    "cooldown": 210,
-    "key": 3,
-    "summonerLevel": 4,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerExhaust.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 144,
-        "y": 0
-    }
-}, {
-    "id": "flash",
-    "name": "Flash",
-    "description": "Teleports your champion a short distance toward your cursor's location.",
-    "tooltip": "Teleports your champion a short distance toward your cursor's location.",
-    "cooldown": 300,
-    "key": 4,
-    "summonerLevel": 8,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerFlash.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 192,
-        "y": 0
-    }
-}, {
-    "id": "haste",
-    "name": "Ghost",
-    "description": "Your champion gains increased Movement Speed and can move through units for 10 seconds. Grants a maximum of 28-45% (depending on champion level) Movement Speed after accelerating for 2 seconds.",
-    "tooltip": "Your champion gains increased Movement Speed and can move through units for 10 seconds. Grants a maximum of {{ f1 }}% Movement Speed after accelerating for 2 seconds.",
-    "cooldown": 180,
-    "key": 6,
-    "summonerLevel": 1,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerHaste.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 240,
-        "y": 0
-    }
-}, {
-    "id": "heal",
-    "name": "Heal",
-    "description": "Restores 90-345 Health (depending on champion level) and grants 30% Movement Speed for 1 second to you and target allied champion. This healing is halved for units recently affected by Summoner Heal.",
-    "tooltip": "Restores {{ f1 }} Health and grants 30% Movement Speed for 1 second to your champion and target allied champion. This healing is halved for units recently affected by Summoner Heal.<br><br><span class=\"colorFFFF00\">If this spell cannot find a target, it will cast on the most wounded allied champion in range.</span>",
-    "cooldown": 240,
-    "key": 7,
-    "summonerLevel": 1,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerHeal.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 288,
-        "y": 0
-    }
-}, {
-    "id": "mana",
-    "name": "Clarity",
-    "description": "Restores 50% of your champion's maximum Mana. Also restores allies for 25% of their maximum Mana.",
-    "tooltip": "Restores {{ f1 }}% maximum Mana to your Champion and {{ f2 }}% to nearby allies.",
-    "cooldown": 240,
-    "key": 13,
-    "summonerLevel": 1,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerMana.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 336,
-        "y": 0
-    }
-}, {
-    "id": "pororecall",
-    "name": "To the King!",
-    "description": "Quickly travel to the Poro King's side.",
-    "tooltip": "<span class=\"colorFFE076\">Passive:</span> Hitting an enemy champion with a Poro gives your team a Poro Mark. Upon reaching 10 Poro Marks, your team summons the Poro King to fight alongside them. While the Poro King is active, no Poro Marks can be scored by either team.<br><br><span class=\"colorFFE076\">Active:</span> Quickly dash to King Poro's side. Can only be cast while the Poro King is summoned for your team. <br><br><i><span class=\"colorFDD017\">''Poros tug the heartstrings. The rest of you just comes along for the ride.''</span></i>",
-    "cooldown": 10,
-    "key": 30,
-    "summonerLevel": 1,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerPoroRecall.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 384,
-        "y": 0
-    }
-}, {
-    "id": "porothrow",
-    "name": "Poro Toss",
-    "description": "Toss a Poro at your enemies. If it hits, you can quickly travel to your target as a follow up.",
-    "tooltip": "Toss a Poro a long distance, dealing {{ f2 }} true damage to the first enemy unit hit, granting <span class=\"coloree91d7\">True Sight</span> of the target. This ability can be recast for 3 seconds if it hits an enemy to dash to the target hit. Dashing to the target will reduce the cooldown of Poro Toss by 5 seconds.<br><br>Poros are not blocked by spell shields or wind walls because they are animals, not spells!<br><br><i><span class=\"colorFDD017\">''Poros are a model for Runeterran aerodynamics.''</span></i>",
-    "cooldown": 20,
-    "key": 31,
-    "summonerLevel": 1,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerPoroThrow.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 432,
-        "y": 0
-    }
-}, {
-    "id": "siegechampselect1",
-    "name": "Nexus Siege: Siege Weapon Slot",
-    "description": "In Nexus Siege, Summoner Spells are replaced with Siege Weapon Slots. Spend Crystal Shards to buy single-use Siege Weapons from the item shop, then use your Summoner Spell keys to activate them!",
-    "tooltip": "",
-    "cooldown": 0,
-    "key": 33,
-    "summonerLevel": 1,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerSiegeChampSelect1.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 0,
-        "y": 48
-    }
-}, {
-    "id": "siegechampselect2",
-    "name": "Nexus Siege: Siege Weapon Slot",
-    "description": "In Nexus Siege, Summoner Spells are replaced with Siege Weapon Slots. Spend Crystal Shards to buy single-use Siege Weapons from the item shop, then use your Summoner Spell keys to activate them!",
-    "tooltip": "",
-    "cooldown": 0,
-    "key": 34,
-    "summonerLevel": 1,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerSiegeChampSelect2.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 48,
-        "y": 48
-    }
-}, {
-    "id": "smite",
-    "name": "Smite",
-    "description": "Deals 390-1000 true damage (depending on champion level) to target epic or large monster or enemy minion. Restores Health based on your maximum life when used against monsters.",
-    "tooltip": "Deals <span class=\"colorFEFCFF\">{{ f1 }}</span> true damage to target epic or large monster or enemy minion.  Against monsters, additionally restores <span class=\"colorFFFFFF\">{{ f6 }}</span> <span class=\"colorFF6666\">(+{{ f7 }})</span> Health.<br><br>Smite regains a charge every {{ f3 }} seconds, up to a maximum of 2 charges.",
-    "cooldown": 75,
-    "key": 11,
-    "summonerLevel": 10,
-    "maxammo": "2",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerSmite.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 96,
-        "y": 48
-    }
-}, {
-    "id": "snowball",
-    "name": "Mark",
-    "description": "Throw a snowball in a straight line at your enemies. If it hits an enemy, they become marked, granting True Sight, and your champion can quickly travel to the marked target as a follow up.",
-    "tooltip": "Throw a snowball a long distance, dealing {{ f1 }} true damage to the first enemy unit hit and granting <span class=\"coloree91d7\">True Sight</span> of the target. If it hits an enemy, this ability can be recast for {{ f2 }} seconds to Dash to the tagged unit, dealing an additional {{ f5 }} true damage. Dashing to the target will reduce the cooldown of Mark by {{ f3 }}%.<br><br><span class=\"colorFFFF00\">Mark projectiles are not stopped by spell shields or projectile mitigation.</span>",
-    "cooldown": 80,
-    "key": 32,
-    "summonerLevel": 1,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerSnowball.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 144,
-        "y": 48
-    }
-}, {
-    "id": "teleport",
-    "name": "Teleport",
-    "description": "After channeling for 4.5 seconds, teleports your champion to target allied structure, minion, or ward.",
-    "tooltip": "After channeling for {{ f1 }} seconds, your champion teleports to target allied structure, minion, or ward.<br><br>You may reactivate Teleport to cancel it, placing it on a {{ f3 }} second cooldown.",
-    "cooldown": 300,
-    "key": 12,
-    "summonerLevel": 6,
-    "maxammo": "-1",
-    "icon": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/spell/SummonerTeleport.png",
-    "sprite": {
-        "url": "http://ddragon.leagueoflegends.com/cdn/7.8.1/img/sprite/spell0.png",
-        "x": 192,
-        "y": 48
-    }
-}];
+};
 
 /***/ }),
-/* 96 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26713,7 +26793,23 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactEmotion = __webpack_require__(6);
+
+var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var KDA = /*#__PURE__*/(0, _reactEmotion2.default)('p', {
+    target: 'css-155dp1i0'
+})('line-height:0;font-size:0.9em;');
+
+var CreepScore = /*#__PURE__*/(0, _reactEmotion2.default)('p', {
+    target: 'css-155dp1i1'
+})('line-height:0;font-size:0.9em;');
+
+var CreepScorePerMinute = /*#__PURE__*/(0, _reactEmotion2.default)('p', {
+    target: 'css-155dp1i2'
+})('line-height:0;font-size:0.9em;');
 
 var GameStats = exports.GameStats = function GameStats(_ref) {
     var matchInfo = _ref.matchInfo;
@@ -26721,19 +26817,19 @@ var GameStats = exports.GameStats = function GameStats(_ref) {
         'section',
         null,
         _react2.default.createElement(
-            'p',
+            KDA,
             null,
             matchInfo.kda,
             ' KDA'
         ),
         _react2.default.createElement(
-            'p',
+            CreepScore,
             null,
             matchInfo.creepScore,
             ' CS'
         ),
         _react2.default.createElement(
-            'p',
+            CreepScorePerMinute,
             null,
             matchInfo.creepScorePerMinute,
             ' CS/Min'
@@ -26742,7 +26838,7 @@ var GameStats = exports.GameStats = function GameStats(_ref) {
 };
 
 /***/ }),
-/* 97 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26757,7 +26853,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactEmotion = __webpack_require__(7);
+var _reactEmotion = __webpack_require__(6);
 
 var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
@@ -26829,7 +26925,7 @@ var Items = exports.Items = function Items(_ref) {
 };
 
 /***/ }),
-/* 98 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26844,7 +26940,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactEmotion = __webpack_require__(7);
+var _reactEmotion = __webpack_require__(6);
 
 var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
@@ -26894,7 +26990,7 @@ var RecentMatchesList = exports.RecentMatchesList = function RecentMatchesList(p
 };
 
 /***/ }),
-/* 99 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26905,7 +27001,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getUrlParams = exports.getSummonerData = undefined;
 
-var _axios = __webpack_require__(100);
+var _axios = __webpack_require__(99);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -26989,21 +27085,21 @@ var getUrlParams = exports.getUrlParams = function getUrlParams(url) {
 };
 
 /***/ }),
-/* 100 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(101);
+module.exports = __webpack_require__(100);
 
 /***/ }),
-/* 101 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(4);
-var bind = __webpack_require__(43);
-var Axios = __webpack_require__(103);
+var bind = __webpack_require__(42);
+var Axios = __webpack_require__(102);
 var defaults = __webpack_require__(23);
 
 /**
@@ -27037,15 +27133,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(47);
-axios.CancelToken = __webpack_require__(117);
-axios.isCancel = __webpack_require__(46);
+axios.Cancel = __webpack_require__(46);
+axios.CancelToken = __webpack_require__(116);
+axios.isCancel = __webpack_require__(45);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(118);
+axios.spread = __webpack_require__(117);
 
 module.exports = axios;
 
@@ -27054,7 +27150,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 102 */
+/* 101 */
 /***/ (function(module, exports) {
 
 /*!
@@ -27081,7 +27177,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 103 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27089,8 +27185,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(23);
 var utils = __webpack_require__(4);
-var InterceptorManager = __webpack_require__(112);
-var dispatchRequest = __webpack_require__(113);
+var InterceptorManager = __webpack_require__(111);
+var dispatchRequest = __webpack_require__(112);
 
 /**
  * Create a new instance of Axios
@@ -27167,7 +27263,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 104 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27186,13 +27282,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 105 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(45);
+var createError = __webpack_require__(44);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -27219,7 +27315,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 106 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27247,7 +27343,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 107 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27322,7 +27418,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 108 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27382,7 +27478,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 109 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27457,7 +27553,7 @@ module.exports = (
 
 
 /***/ }),
-/* 110 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27500,7 +27596,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 111 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27560,7 +27656,7 @@ module.exports = (
 
 
 /***/ }),
-/* 112 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27619,18 +27715,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 113 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(4);
-var transformData = __webpack_require__(114);
-var isCancel = __webpack_require__(46);
+var transformData = __webpack_require__(113);
+var isCancel = __webpack_require__(45);
 var defaults = __webpack_require__(23);
-var isAbsoluteURL = __webpack_require__(115);
-var combineURLs = __webpack_require__(116);
+var isAbsoluteURL = __webpack_require__(114);
+var combineURLs = __webpack_require__(115);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -27712,7 +27808,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 114 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27739,7 +27835,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 115 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27760,7 +27856,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 116 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27781,13 +27877,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 117 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(47);
+var Cancel = __webpack_require__(46);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -27845,7 +27941,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 118 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27879,7 +27975,92 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
+/* 118 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Footer = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactEmotion = __webpack_require__(6);
+
+var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Copyright = /*#__PURE__*/(0, _reactEmotion2.default)('p', {
+    target: 'css-1f7rjwb0'
+})('position:absolute;bottom:3%;left:0;right:0;& span{color:red;}');
+
+var Footer = exports.Footer = function Footer() {
+    return _react2.default.createElement(
+        'footer',
+        null,
+        _react2.default.createElement(
+            Copyright,
+            null,
+            'Made with the ',
+            _react2.default.createElement(
+                'span',
+                null,
+                'blood'
+            ),
+            ' of Noxus \u2764\uFE0F '
+        )
+    );
+};
+
+/***/ }),
 /* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.SearchBox = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactEmotion = __webpack_require__(6);
+
+var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var searchWrapper = /*#__PURE__*/(0, _reactEmotion.css)('display:inline-flex;width:300px;vertical-align:middle;white-space:nowrap;position:relative;& input{outline:none;width:300px;height:50px;background:#2b303b;border:none;font-size:10pt;float:left;color:#63717f;padding-left:45px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}& i{position:absolute;top:50%;margin-left:15px;margin-top:-7px;z-index:1;color:#4f5b66;}');
+
+var SearchInput = /*#__PURE__*/(0, _reactEmotion2.default)('input', {
+    target: 'css-x0e21p0'
+})('background:#fff;border:1px solid rgba(34,36,38,.15);color:rgba(0,0,0,.87);border-radius:.28571429rem;padding:1%;font-family:Lato,\'Helvetica Neue\',Arial,Helvetica,sans-serif;');
+
+var SearchBox = exports.SearchBox = function SearchBox(props) {
+    return _react2.default.createElement(
+        'form',
+        { onSubmit: props._handleSubmit },
+        _react2.default.createElement(
+            'div',
+            { className: searchWrapper },
+            _react2.default.createElement('i', { className: 'fa fa-search' }),
+            _react2.default.createElement(SearchInput, { type: 'text', placeholder: 'Search...', onChange: props._handleChange })
+        )
+    );
+};
+
+/***/ }),
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27894,7 +28075,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactEmotion = __webpack_require__(7);
+var _reactEmotion = __webpack_require__(6);
 
 var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
@@ -27905,15 +28086,15 @@ var summonerIconCDN = 'http://ddragon.leagueoflegends.com/cdn/6.3.1/img/profilei
 var loader = /*#__PURE__*/(0, _reactEmotion.css)('display:none;height:100%;width:100%;background-color:rgba(255,255,255,0.94);position:absolute;z-index:999;top:0;bottom:0;right:0;left:0;');
 
 var LoadingWrapper = /*#__PURE__*/(0, _reactEmotion2.default)('div', {
-    target: 'css-jlu9nt0'
+    target: 'css-qikdbs0'
 })('margin:15% auto;');
 
 var Message = /*#__PURE__*/(0, _reactEmotion2.default)('h2', {
-    target: 'css-jlu9nt1'
+    target: 'css-qikdbs1'
 })('color:#000;text-align:center;');
 
 var Avatar = /*#__PURE__*/(0, _reactEmotion2.default)('img', {
-    target: 'css-jlu9nt2'
+    target: 'css-qikdbs2'
 })('width:106px;height:106px;border-radius:50%;');
 
 var OverlayLoader = exports.OverlayLoader = function OverlayLoader() {
@@ -27927,14 +28108,48 @@ var OverlayLoader = exports.OverlayLoader = function OverlayLoader() {
             _react2.default.createElement(
                 Message,
                 null,
-                'Hang Tight! Doing some quick maths.'
+                'Hang Tight! Doing some quick maths!'
             )
         )
     );
 };
 
 /***/ }),
-/* 120 */
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.GithubRibbon = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactEmotion = __webpack_require__(6);
+
+var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Ribbon = /*#__PURE__*/(0, _reactEmotion2.default)('img', {
+    target: 'css-jw17ts0'
+})('position:absolute;top:0;right:0;border:0;');
+
+var GithubRibbon = exports.GithubRibbon = function GithubRibbon() {
+    return _react2.default.createElement(
+        'a',
+        { href: 'https://github.com/zzmarkzz321/LoLFYv2' },
+        _react2.default.createElement(Ribbon, { src: 'https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67', alt: 'Fork me on GitHub', 'data-canonical-src': 'https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png' })
+    );
+};
+
+/***/ }),
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
