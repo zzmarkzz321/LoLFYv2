@@ -5,13 +5,20 @@ import { SummonerSpells } from "./SummonerSpells";
 
 const championSpriteCdn = 'http://ddragon.leagueoflegends.com/cdn/7.5.2/img/champion/';
 
-const Outcome = styled('h2')`
-    color: ${props => props.victory ? 'green' : 'red'}
+const Outcome = styled('h4')`
+    color: ${props => props.victory ? 'green' : 'red'};
+    line-height: 0;
 `;
 
+const GameDuration = styled('h4')`
+    line-height: 0;
+`;
+
+const ChampionLevel = styled('h4')``;
+
 const ChampionAvatar = styled('img')`
-    width: 86px;
-    height: 86px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 `;
 
@@ -19,6 +26,10 @@ const SummaryContainer = styled('section')`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+`;
+
+const ChampSumWrapper = styled('div')`
+
 `;
 
 export const GameSummary = ({matchInfo}) => {
@@ -30,13 +41,13 @@ export const GameSummary = ({matchInfo}) => {
         <SummaryContainer>
             <div>
                 <Outcome victory={matchInfo.outcome === 'Victory'}>{matchInfo.outcome}</Outcome>
-                <p>{gameLengthMinute}m {gameLengthSecondsConverted}s</p>
-                <p>Level {matchInfo.championLevel}</p>
+                <GameDuration>{gameLengthMinute}m {gameLengthSecondsConverted}s</GameDuration>
+                <ChampionLevel>Level {matchInfo.championLevel}</ChampionLevel>
             </div>
-            <div>
+            <ChampSumWrapper>
                 <ChampionAvatar src={championSpriteCdn.concat(championIdMap[matchInfo.champion], '.png')}/>
                 <SummonerSpells summonerSpells={matchInfo.summonerSpells}/>
-            </div>
+            </ChampSumWrapper>
             <div>
                 <h3>{championIdMap[matchInfo.champion]}</h3>
             </div>

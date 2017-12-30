@@ -1,10 +1,10 @@
 'use strict';
 
-/*
-*
-* A little script to transform the champInfo static data into a map of Champion ID and Champion Names
-*
-* */
+/**
+ * RIOT Static Data v3: Champion
+ * updated 12/29/2017
+ *
+ */
 
 const championInfo = {
     "type": "champion",
@@ -2097,6 +2097,7 @@ const championInfo = {
         }
     }
 };
+
 // Create the champion id, name object
 let champIDMap = {};
 for (const key of Object.keys(championInfo.data)) {

@@ -1,25 +1,30 @@
 import React from 'react';
-import styled, { css, injectGlobal } from "react-emotion";
+import styled, { injectGlobal } from "react-emotion";
 
 import { Items, GameSummary, GameStats } from "./";
-import { SearchBox } from "../Home/SearchBox";
 
 injectGlobal`
     body {
         margin: 0;
         padding: 0;
-        font-family: sans-serif;
+        font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;;
         background-color: #222;
         color: white;
+    }
+    
+    a:hover {
+        cursor: pointer;
+        text-decoration: underline;
     }
 `;
 
 const MatchContainer = styled('section')`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    margin: 5% 0%;
     text-align: center;
+    background: rgba(255, 0, 0, 0.4);
+    margin: 5% 10%;
 `;
 
 

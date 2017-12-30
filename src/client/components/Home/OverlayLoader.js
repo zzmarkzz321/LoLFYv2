@@ -35,7 +35,7 @@ export const OverlayLoader = () => (
     <div id="loader-1" className={loader}>
         <LoadingWrapper>
             <Avatar src={summonerIconCDN}/>
-            <Message>Hang Tight! Doing some quick maths.</Message>
+            <Message>Hang Tight! Doing some quick maths!</Message>
         </LoadingWrapper>
     </div>
 );

@@ -37,7 +37,7 @@ const _formatMatchData = (matchDetails, participantID, summonerName) => {
     const kills = participantStats.kills;
     const deaths = participantStats.deaths;
     const assists = participantStats.assists;
-    const kda = kills + '/' + deaths + '/' + assists;
+    const kda = kills + ' / ' + deaths + ' / ' + assists;
 
     const championLevel = participantStats.champLevel;
     const creepScore = participantStats.totalMinionsKilled + participantStats.neutralMinionsKilled;

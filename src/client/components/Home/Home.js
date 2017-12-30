@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import styled, { css, injectGlobal } from "react-emotion";
-import { SearchBox, OverlayLoader } from './';
+import { SearchBox, OverlayLoader, GithubRibbon } from './';
 import { Results } from "../Results/";
 import { getSummonerData } from "../../utils/getSummonerData";
+import { Footer } from "../Layout/Footer";
+
+injectGlobal`
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;;
+    }
+`;
 
 const app = css`
     text-align: center;
@@ -23,14 +32,6 @@ const appHeader = css`
     }
     & h1 span {
         color: #f00;
-    }
-`;
-
-injectGlobal`
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
     }
 `;
 
@@ -85,12 +86,13 @@ export class Home extends Component {
         if (!this.state.search) {
             return (
                 <div className={app}>
+                    <GithubRibbon/>
                     <div className={appHeader}>
                         <h1>LOL<span>FY</span></h1>
-                        <p>Quick and mini League of Legends Stats App.</p>
+                        <p>A mini League of Legends Stats App</p>
                     </div>
-
                     <SearchBox _handleChange={this._handleChange} _handleSubmit={this._handleSubmit}/>
+                    <Footer/>
                     <OverlayLoader/>
                 </div>
             )
