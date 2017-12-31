@@ -1,3 +1,5 @@
+## **DOCS IN PROGRESS**
+
 # LoLFYv2
 LOLFY rebuilt from the ground up
 
