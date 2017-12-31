@@ -111,7 +111,7 @@ exports.getSummonerMatchInfo = (req, res) => {
         .then(matchDetails => {
             const participantIdentity = matchDetails.participantIdentities
                 .filter(x => x.player.summonerName.toLowerCase() === summonerName.toLowerCase());
-            return _formatMatchData(matchDetails, participantIdentity[0].participantId, summonerName);
+            return _formatMatchData(matchDetails, participantIdentity[0].participantId, participantIdentity[0].player.summonerName);
         })
         .then(formattedMatchData => res.send(JSON.stringify(formattedMatchData, null, 2)))
         .catch(err => res.send({"error": "Please renew the RIOT API Key"}));
