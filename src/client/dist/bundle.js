@@ -26031,7 +26031,7 @@ var Home = exports.Home = function (_Component) {
                         _react2.default.createElement(
                             'p',
                             null,
-                            'A mini League of Legends Stats App'
+                            'An open source League of Legends Stats App'
                         )
                     ),
                     _react2.default.createElement(_.SearchBox, { _handleChange: this._handleChange, _handleSubmit: this._handleSubmit }),
@@ -26127,19 +26127,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactEmotion.injectGlobal)("body{margin:0;padding:0;font-family:Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;;background-color:#222;color:white;}a:hover{cursor:pointer;text-decoration:underline;}");
 
 var MatchContainer = /*#__PURE__*/(0, _reactEmotion2.default)('section', {
-    target: "css-5q7t550"
-})("display:flex;justify-content:space-around;align-items:center;text-align:center;background:rgba(255,0,0,0.4);margin:5% 10%;");
+    target: "css-hzckdt0"
+})("display:flex;justify-content:space-around;align-items:center;text-align:center;background:", function (props) {
+    return props.victory ? 'rgba(0, 255, 0, 0.1)' : 'rgba(255, 0, 0, 0.2)';
+}, ";margin:5% 10%;");
 
 var Navigation = /*#__PURE__*/(0, _reactEmotion2.default)('nav', {
-    target: "css-5q7t551"
+    target: "css-hzckdt1"
 })("margin:5% 10%;display:block;");
 
 var HomeButton = /*#__PURE__*/(0, _reactEmotion2.default)('a', {
-    target: "css-5q7t552"
+    target: "css-hzckdt2"
 })("font-size:35px;color:#fff;& span{color:#f00;}");
 
 var SummonerName = /*#__PURE__*/(0, _reactEmotion2.default)('h1', {
-    target: "css-5q7t553"
+    target: "css-hzckdt3"
 })("margin-left:10%;");
 
 var _reload = function _reload() {
@@ -26173,7 +26175,7 @@ var Results = exports.Results = function Results(_ref) {
         ),
         _react2.default.createElement(
             MatchContainer,
-            null,
+            { victory: matchInfo.outcome === 'Victory' },
             _react2.default.createElement(_.GameSummary, { matchInfo: matchInfo }),
             _react2.default.createElement(_.GameStats, { matchInfo: matchInfo }),
             _react2.default.createElement(_.Items, { items: matchInfo.items })

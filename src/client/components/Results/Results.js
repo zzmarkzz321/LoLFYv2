@@ -23,7 +23,7 @@ const MatchContainer = styled('section')`
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    background: rgba(255, 0, 0, 0.4);
+    background: ${props => props.victory ? 'rgba(0, 255, 0, 0.1)' : 'rgba(255, 0, 0, 0.2)'};
     margin: 5% 10%;
 `;
 
@@ -59,7 +59,7 @@ export const Results = ({matchInfo}) => {
 
                 <SummonerName>{matchInfo.summonerName}</SummonerName>
 
-                <MatchContainer>
+                <MatchContainer victory={matchInfo.outcome === 'Victory'}>
                     <GameSummary matchInfo={matchInfo}/>
                     <GameStats matchInfo={matchInfo}/>
                     <Items items={matchInfo.items}/>

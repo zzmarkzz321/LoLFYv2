@@ -89,7 +89,7 @@ export class Home extends Component {
                     <GithubRibbon/>
                     <div className={appHeader}>
                         <h1>LOL<span>FY</span></h1>
-                        <p>A mini League of Legends Stats App</p>
+                        <p>An open source League of Legends Stats App</p>
                     </div>
                     <SearchBox _handleChange={this._handleChange} _handleSubmit={this._handleSubmit}/>
                     <Footer/>
