@@ -1,18 +1,22 @@
 {
   "name": "LOLFYV2",
   "version": "1.0.0",
-  "description": "Google Function for accessing Riot's Services ",
+  "description": "Back End Services",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "google-functions"
+    "google-functions",
+    "express",
+    "MongoDB"
   ],
   "author": "Mark Renzo Santiago",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.0-rc0"
   }
 }
