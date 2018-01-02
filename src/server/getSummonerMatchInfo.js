@@ -10,7 +10,7 @@ const RIOT_API_KEY = process.env.RIOT_API;
  * Formats all the data from the RIOT APIs and returns a json with the required info
  * @private
  */
-const _formatMatchData = (matchDetails, participantID, summonerName) => {
+const _formatMatchData = async (matchDetails, participantID, summonerName) => {
     const participantBase = matchDetails.participants[participantID - 1];
     const participantStats = participantBase.stats;
 
@@ -56,7 +56,7 @@ const _formatMatchData = (matchDetails, participantID, summonerName) => {
         creepScorePerMinute
     };
 
-    return Promise.resolve(matchDetailsSchema);
+    return matchDetailsSchema;
 };
 
 /**
@@ -93,9 +93,49 @@ const _getSummonerId = (summonerName) => {
 };
 
 /**
+ * Gets the participant Identity of a summoner from a given match
+ * @private
+ */
+const _getParticipantIdentity = async (matchDetails, summonerName) => {
+    const participantIdentity = matchDetails.participantIdentities
+        .filter(x => x.player.summonerName.toLowerCase() === summonerName.toLowerCase());
+    return await _formatMatchData(matchDetails, participantIdentity[0].participantId, participantIdentity[0].player.summonerName);
+};
+
+/**
+ * Performs all the asynchronous operations to process the summoner name through RIOTs API
+ * @private
+ */
+const _getSummonerMatchInfo = async (summonerName) => {
+    const summonerID = await _getSummonerId(summonerName);
+    const recentMatches = await _getRecentMatches(summonerID);
+    const allRecentMatchesID = recentMatches.map(x => x.gameId);
+    const matchDetails = await _getMatchInfo(allRecentMatchesID[0]);
+
+    return _getParticipantIdentity(matchDetails, summonerName);
+};
+
+/**
+ * Sends a summoner's match info from a google function.
+ *
+ * v2 replaces ES6 Promises with ES8 Async/await for cleaner and smaller code
+ */
+exports.getSummonerMatchInfo = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*')
+        .set('Access-Control-Allow-Headers', '*')
+        .set('Access-Control-Allow-Methods', 'GET, POST')
+        .status(200);
+
+    const summonerName = req.body.summonerName || req.get('summonerName');
+    const formattedMatchData = await _getSummonerMatchInfo(summonerName);
+
+    return res.send(JSON.stringify(formattedMatchData, null, 2));
+};
+
+/**
  * Sends a summoner's match info from a google function
  */
-exports.getSummonerMatchInfo = (req, res) => {
+exports.getSummonerMatchInfov1 = (req, res) => {
     res.set('Access-Control-Allow-Origin', '*')
         .set('Access-Control-Allow-Headers', '*')
         .set('Access-Control-Allow-Methods', 'GET, POST')
