@@ -87,10 +87,10 @@ export class Home extends Component {
             return (
                 <div className={app}>
                     <GithubRibbon/>
-                    <div className={appHeader}>
+                    <header className={appHeader}>
                         <h1>LOL<span>FY</span></h1>
                         <p>An open source League of Legends Stats App</p>
-                    </div>
+                    </header>
                     <SearchBox _handleChange={this._handleChange} _handleSubmit={this._handleSubmit}/>
                     <Footer/>
                     <OverlayLoader/>
